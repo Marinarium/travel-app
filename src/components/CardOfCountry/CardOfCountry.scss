@@ -1,0 +1,116 @@
+@import '../../assets/styles/main';
+
+.card {
+  width: 100%;
+  height: 290px;
+  border-radius: 2px;
+  box-shadow: $shadow;
+  background-color: $grey;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.card__img {
+  width:100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card__box {
+  position: absolute;
+  z-index: 1;
+  margin-left: 28px;
+  margin-bottom: 30px;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -7px;
+    top: -8px;
+    width: 110px;
+    height: 171px;
+    background: $green;
+    box-shadow: $shadow;
+    border-radius: 2px;
+    z-index: -1;
+  }
+}
+
+.card:nth-child(4n+2) {
+  .card__box:before {
+    background: $second-green;
+  }
+  .card__content:after {
+    border-left: 2px solid $second-green;
+    border-bottom: 2px solid $second-green;
+  }
+}
+
+.card:nth-child(4n+3) {
+  .card__box:before {
+    background: $third-green;
+  }
+  .card__content:after {
+    border-left: 2px solid $third-green;
+    border-bottom: 2px solid $third-green;
+  }
+}
+
+.card:nth-child(4n+4) {
+  .card__box:before {
+    background: $fourth-green;
+  }
+  .card__content:after {
+    border-left: 2px solid $fourth-green;
+    border-bottom: 2px solid $fourth-green;
+  }
+}
+
+.card__content {
+  height: 156px;
+  width: 305px;
+  box-sizing: border-box;
+  padding-left: 30px;
+  padding-bottom: 32px;
+  background: $transparent-dark;
+  border-radius: 2px;
+  box-shadow: $shadow;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.card__content:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 16px;
+  left: 13px;
+  height: 76px;
+  width: 155px;
+  box-sizing: border-box;
+  border-left: 2px solid $green;
+  border-bottom: 2px solid $green;
+}
+
+.card__title {
+  @include main-font(bold, 18px);
+  line-height: 125%;
+  letter-spacing: 0.065em;
+  text-transform: uppercase;
+  color: $light;
+  margin-bottom: 4px;
+}
+
+.card__subtitle {
+  @include main-font(300, 18px);
+  line-height: 125%;
+  letter-spacing: 0.065em;
+  text-transform: capitalize;
+  color: $light;
+}

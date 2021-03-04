@@ -1,0 +1,29 @@
+@import '../../assets/styles/main';
+
+.header {
+  background-color: $dark;
+  box-shadow: $shadow;
+  padding: 15px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: 1600px) {
+    padding-left: 12%;
+    padding-right: 12%;
+  }
+}
+
+.header__logo {
+  flex-grow: 1;
+}
+
+.logo__link {
+  transition-duration: 300ms;
+  display: inline-block;
+
+  &:hover, &:focus {
+    outline: none;
+    transform: translateY(3px);
+  }
+}
