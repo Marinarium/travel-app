@@ -66,8 +66,8 @@
 
 .search__input:focus ~ .search__line::before,
 .search__input:focus ~ .search__line::after {
+  background-color: $green;
   width: 50%;
-  background-color: $second-green;
   transition-duration: 350ms;
 }
 

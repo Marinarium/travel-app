@@ -1,6 +1,6 @@
 import React from "react";
 
-import AboutCountry from "../../components/AboutCountry/AboutCountry";
+import AboutCountry from "../AboutCountry/AboutCountry";
 import WidgetTime from "../../components/Widgets/WidgetTime/WidgetTime";
 import WidgetWeather from "../../components/Widgets/WidgetWeather/WidgetWeather";
 

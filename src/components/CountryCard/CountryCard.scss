@@ -6,6 +6,7 @@
   border-radius: 2px;
   box-shadow: $shadow;
   background-color: $grey;
+  transition-duration: 500ms;
 }
 
 .card__link {
@@ -20,6 +21,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition-duration: 500ms;
+  transition-timing-function: ease-out;
 }
 
 .card__box {
@@ -40,6 +43,8 @@
     box-shadow: $shadow;
     border-radius: 2px;
     z-index: -1;
+    transition-duration: 700ms;
+    transition-timing-function: ease-out;
   }
 }
 
@@ -91,6 +96,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-end;
+  transition-duration: 1000ms;
 }
 
 .card__content:after {
@@ -105,6 +111,7 @@
   border-left: 2px solid $green;
   border-bottom: 2px solid $green;
   z-index: -1;
+  transition-duration: 750ms;
 }
 
 .card__title {
@@ -122,4 +129,26 @@
   letter-spacing: 0.065em;
   text-transform: capitalize;
   color: $light;
+}
+
+/*--- Animation ---*/
+.card:hover {
+  .card__img {
+    transform: scale(1.03);
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.25);
+  }
+
+  .card__box:before {
+    width: 321px;
+  }
+
+  .card__content:after {
+    height: 120px;
+    width: 190px;
+  }
+
+  .card__content {
+    background: $dark;
+  }
+
 }
