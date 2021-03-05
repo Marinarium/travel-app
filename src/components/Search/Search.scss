@@ -21,7 +21,7 @@
   background: transparent;
 }
 
-.search__input{
+.search__input {
   width: 100%;
   height: 30px;
 
@@ -56,6 +56,7 @@
     right: 50%;
   }
 }
+
 .search__input:hover ~ .search__line::before,
 .search__input:hover ~ .search__line::after {
   background-color: $green;

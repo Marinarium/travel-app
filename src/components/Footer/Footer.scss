@@ -1,6 +1,6 @@
 @import '../../assets/styles/main';
 
-.footer{
+.footer {
   background-color: $dark;
   padding: 14px 5%;
   display: flex;
@@ -53,15 +53,15 @@
   color: $light;
   transition-duration: 300ms;
 
-  svg path{
+  svg path {
     transition-duration: 300ms;
   }
 
-  &:hover, &:focus{
+  &:hover, &:focus {
     outline: none;
     color: $green;
 
-    svg path{
+    svg path {
       fill: $green;
     }
   }

@@ -7,7 +7,9 @@ export default function FirstScreen() {
         <section className="first-screen">
             <div className="first-screen__box">
                 <div className="first-screen__content">
-                    <h1 className="main-title first-screen__title">Travel <div className="accent">all over</div> the world</h1>
+                    <h1 className="main-title first-screen__title">Travel <div className="accent">all over</div> the
+                        world
+                    </h1>
                     <p className="first-screen__moto">Find your own destination!</p>
                 </div>
             </div>
