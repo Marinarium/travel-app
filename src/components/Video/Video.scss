@@ -1,0 +1,33 @@
+@import '../../assets/styles/main';
+
+.video {
+  padding: 0 5%;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  @media (min-width: 1600px) {
+    padding-left: 12%;
+    padding-right: 12%;
+  }
+}
+
+.video__title {
+  @include main-font(bold, 24px);
+  letter-spacing: 0.065em;
+  text-transform: capitalize;
+  color: $dark;
+  margin-bottom: 40px;
+
+  .accent {
+    color: $green;
+  }
+}
+
+.video__player {
+  width: 100%;
+  height: 100%;
+  outline: none;
+}

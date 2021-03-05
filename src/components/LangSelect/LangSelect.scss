@@ -1,0 +1,29 @@
+@import '../../assets/styles/main';
+
+.select {
+  height: 25px;
+  min-width: 100px;
+  border-radius: 2px;
+  cursor: pointer;
+  background-color: $green;
+  color: $light;
+  border: 1px solid $second-green;
+
+  &:focus {
+    outline: none;
+  }
+
+  option {
+    @include main-font(normal, 14px);
+    line-height: 125%;
+    color: $dark;
+
+    &:not(:checked) {
+      background-color: $light;
+    }
+
+    &:checked {
+      background-color: $grey;
+    }
+  }
+}

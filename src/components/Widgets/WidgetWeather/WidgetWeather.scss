@@ -1,0 +1,24 @@
+@import '../../../assets/styles/main';
+
+.wg-weather {
+  @include widget();
+}
+
+.wg-weather__title {
+  @include widget-title($second-green);
+}
+
+.wg-weather__temperature,
+.wg-weather__humidity,
+.wg-weather__wind {
+  @include main-font(normal, 14px);
+  color: $dark;
+}
+
+.wg-weather__temperature {
+  margin-bottom: 10px;
+}
+
+.wg-weather__humidity {
+  margin-bottom: 13px;
+}

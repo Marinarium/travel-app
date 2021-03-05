@@ -1,0 +1,86 @@
+@import '../../assets/styles/main';
+
+.first-screen {
+  min-height: 450px;
+  height: calc(100vh - 77px);
+  background-image: url("./images/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 65px 5% 106px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  box-shadow: $shadow;
+  margin-bottom: 50px;
+
+  @media (min-width: 1600px) {
+    padding-left: 12%;
+    padding-right: 12%;
+  }
+}
+
+.first-screen__box {
+  position: relative;
+  z-index: 1;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -12px;
+    top: -12px;
+    width: 247px;
+    min-height: 300px;
+    background: $green;
+    box-shadow: $shadow;
+    border-radius: 2px;
+    z-index: -1;
+  }
+}
+
+.first-screen__content {
+  width: 680px;
+  min-height: 279px;
+  background: $transparent-dark;
+  border-radius: 2px;
+  box-shadow: $shadow;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding-top: 99px;
+}
+
+.main-title {
+  @include main-font(bold, 36px);
+  line-height: 125%;
+  letter-spacing: 0.065em;
+  text-transform: capitalize;
+  color: $green;
+  position: relative;
+  margin-bottom: 25px;
+
+  & .accent {
+    display: inline-block;
+    color: $light;
+  }
+
+  &:before {
+    content: url("./images/arrow.svg");
+    display: block;
+    width: 410px;
+    height: 41px;
+    position: absolute;
+    top: -60px;
+  }
+}
+
+.first-screen__moto {
+  @include main-font(normal, 24px);
+  line-height: 125%;
+  letter-spacing: 0.01em;
+  color: $light;
+}

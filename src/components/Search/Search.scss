@@ -1,0 +1,89 @@
+@import '../../assets/styles/main';
+
+.search {
+  float: right;
+  display: inline-block;
+  position: relative;
+  width: 235px;
+  border-bottom: 1px solid $light;
+  align-self: flex-start;
+  bottom: -2px;
+}
+
+.header__search {
+  margin-right: 40px;
+}
+
+.search__input,
+.search__button {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.search__input {
+  width: 100%;
+  height: 30px;
+
+  @include main-font(normal, 14px);
+  color: $light;
+  line-height: 125%;
+}
+
+.search__input::placeholder {
+  @include main-font(normal, 14px);
+  color: $light;
+  line-height: 125%;
+}
+
+/*--- Animation ---*/
+.search__line {
+  &::before, &::after {
+    position: absolute;
+    bottom: -1px;
+    width: 0;
+    height: 2px;
+    content: "";
+    transition-duration: 350ms;
+    transition-property: width;
+  }
+
+  &::before {
+    left: 50%;
+  }
+
+  &::after {
+    right: 50%;
+  }
+}
+
+.search__input:hover ~ .search__line::before,
+.search__input:hover ~ .search__line::after {
+  background-color: $green;
+  width: 50%;
+  transition-duration: 350ms;
+}
+
+.search__input:focus ~ .search__line::before,
+.search__input:focus ~ .search__line::after {
+  background-color: $green;
+  width: 50%;
+  transition-duration: 350ms;
+}
+
+.search__button {
+  height: 30px;
+  width: 42px;
+  position: absolute;
+  top: 0;
+  right: -8px;
+  cursor: pointer;
+  padding: 0;
+  transition-duration: 350ms;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.2);
+  }
+}
+

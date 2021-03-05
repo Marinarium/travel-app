@@ -1,0 +1,22 @@
+@import '../../assets/styles/main';
+
+.about-country {
+  margin-right: 80px;
+  padding-left: 50px;
+}
+
+.about-country__title {
+  @include main-font(bold, 36px);
+  letter-spacing: 0.065em;
+  color: $dark;
+  margin-bottom: 25px;
+
+  .accent {
+    color: $green;
+  }
+}
+
+.about-country__p {
+  @include text-font();
+  margin-bottom: 25px;
+}

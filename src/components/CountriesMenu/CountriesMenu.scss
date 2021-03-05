@@ -1,0 +1,13 @@
+.countries-menu {
+  display: grid;
+  display: -ms-grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+  padding: 0 5%;
+  margin-bottom: 100px;
+
+  @media (min-width: 1600px) {
+    padding-left: 12%;
+    padding-right: 12%;
+  }
+}
