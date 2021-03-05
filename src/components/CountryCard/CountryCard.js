@@ -1,11 +1,14 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
-import "./CardOfCountry.scss"
+import "./CountryCard.scss"
 
-export default function CardOfCountry({id, country, capital, cover}) {
+export default function CountryCard({id, country, capital, cover}) {
 
     return (
+
         <div className="card" key={id}>
+            <Link  className="card__link" to={`/${country.toLowerCase().replace(/ /g, '-')}`}>
             <img src={cover} alt={country} className="card__img"/>
             <div className="card__box">
                 <div className="card__content">
@@ -13,6 +16,8 @@ export default function CardOfCountry({id, country, capital, cover}) {
                     <h3 className="card__subtitle">{capital}</h3>
                 </div>
             </div>
+            </Link>
         </div>
+
     )
 }

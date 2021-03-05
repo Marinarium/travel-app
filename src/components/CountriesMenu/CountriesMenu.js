@@ -1,6 +1,6 @@
 import React from "react";
 
-import CardOfCountry from "../CardOfCountry/CardOfCountry";
+import CountryCard from "../CountryCard/CountryCard";
 
 import "./CountriesMenu.scss"
 
@@ -18,7 +18,7 @@ export default function App() {
 
     const allCards = countriesInfo.map(({id, country, capital, cover}) => {
         return (
-            <CardOfCountry
+            <CountryCard
                 key={id}
                 country={country}
                 capital={capital}

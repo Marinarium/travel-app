@@ -6,10 +6,14 @@
   border-radius: 2px;
   box-shadow: $shadow;
   background-color: $grey;
+}
+
+.card__link {
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
-  cursor: pointer;
+  width: 100%;
+  height: 100%;
 }
 
 .card__img {
