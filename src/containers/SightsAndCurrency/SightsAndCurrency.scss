@@ -1,0 +1,15 @@
+@import '../../assets/styles/main';
+
+.sights-and-currency {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 44px 5% 49px;
+  margin-bottom: 50px;
+  background-color: #F6F5F5;
+
+  @media (min-width: 1600px) {
+    padding-left: 12%;
+    padding-right: 12%;
+  }
+}

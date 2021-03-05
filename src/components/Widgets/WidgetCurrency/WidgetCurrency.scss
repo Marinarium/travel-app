@@ -1,0 +1,31 @@
+@import '../../../assets/styles/main';
+
+.wg-currency {
+  @include widget();
+  padding-bottom: 9px;
+  margin-bottom: 9px;
+}
+
+.wg-currency__title {
+  @include widget-title();
+  text-transform: capitalize;
+  color: $third-green;
+}
+
+.wg-currency__table {
+  width: 100%;
+
+  th {
+    @include main-font(bold, 14px);
+    color: #98AFBA;
+    text-align: left;
+    padding-bottom: 20px;
+  }
+
+  td {
+    @include main-font(normal, 14px);
+    color: $dark;
+    padding-bottom: 23px;
+  }
+}
+

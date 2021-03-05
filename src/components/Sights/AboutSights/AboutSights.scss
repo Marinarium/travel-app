@@ -1,0 +1,20 @@
+@import '../../../assets/styles/main';
+
+.about-sights {
+  margin-right: 80px;
+  padding-left: 50px;
+}
+
+.about-sights__title {
+  @include main-font(bold, 24px);
+  letter-spacing: 0.065em;
+  text-transform: capitalize;
+  color: $green;
+  margin-bottom: 20px;
+}
+
+.about-sights__p {
+  @include text-font();
+  line-height: 170%;
+  margin-bottom: 25px;
+}

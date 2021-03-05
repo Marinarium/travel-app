@@ -1,0 +1,8 @@
+@import '../../assets/styles/main';
+
+.main-wrapper {
+  background-color: $light;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

@@ -5,6 +5,9 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import FirstScreen from "../FirstScreen/FirstScreen";
 import CountriesMenu from "../CountriesMenu/CountriesMenu";
+import CountryPage from "../CountryPage/CountryPage";
+
+import "./App.scss"
 
 export default function App() {
     return (
@@ -14,6 +17,7 @@ export default function App() {
                 <main className="main">
                     <Route path="/" component={FirstScreen} exact />
                     <Route path="/" component={CountriesMenu} exact />
+                    <Route path="/the-netherlands" component={CountryPage} exact />
                 </main>
                 <Footer/>
             </div>

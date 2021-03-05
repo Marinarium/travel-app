@@ -1,0 +1,18 @@
+@import '../../assets/styles/main';
+
+.main-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 5%;
+  margin-bottom: 50px;
+
+  @media (min-width: 1600px) {
+    padding-left: 12%;
+    padding-right: 12%;
+  }
+
+  .widgets{
+    padding-top: 70px;
+  }
+}

@@ -1,0 +1,21 @@
+@import '../../../assets/styles/main';
+
+.wg-time {
+  @include widget();
+  margin-bottom: 30px;
+}
+
+.wg-time__title {
+  @include widget-title();
+}
+
+.wg-time__date {
+  @include main-font(normal, 14px);
+  color: $dark;
+  margin-bottom: 15px;
+}
+
+.wg-time__clock {
+  @include main-font(bold, 24px);
+  color: #98AFBA;;
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom"
 
 import logo from "./images/logo.svg";
 import Search from "../Search/Search";
@@ -10,9 +11,9 @@ export default function Header() {
     return (
         <header className="header">
             <div className="logo header__logo">
-                <a href="#" className="logo__link">
+                <Link to="/" className="logo__link">
                     <img src={logo} alt="Logo TravelApp" className="logo__img"/>
-                </a>
+                </Link>
             </div>
             <Search/>
             <LangSelect/>
