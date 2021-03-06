@@ -1,0 +1,25 @@
+@import '../../assets/styles/main';
+
+.main {
+  flex-grow: 1;
+}
+
+.notFound {
+  position: absolute;
+  width: 100%;
+  top: 20%;
+  text-align: center;
+
+  & h1 {
+    font-size: 48px;
+  }
+
+  & h3 {
+    @include text-font();
+    font-size: 28px;
+  }
+}
+
+//  display: flex;
+//  flex-direction: column;
+//  justify-content: center;
