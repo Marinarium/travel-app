@@ -8,9 +8,7 @@ export default function NotFound() {
       <div className="notFound">
         <h1 className="main-title">Error 404</h1>
         <h3>Oops! Seems like that page never returned from a trip!</h3>
-        <Link to='/'>
-          <h3>Back home</h3>
-        </Link>
+        <Link to='/'>Back home</Link>
       </div>
     </main>
   )

@@ -17,9 +17,19 @@
   & h3 {
     @include text-font();
     font-size: 28px;
+    text-decoration: none;
+    transition: 0.4s ease-in;
+  }
+
+  & a {
+    @include text-font();
+    font-size: 28px;
+    text-decoration-line: underline;
+    transition-duration: 300ms;
+
+    &:hover {
+      outline: none;
+      color: $green;
+    }
   }
 }
-
-//  display: flex;
-//  flex-direction: column;
-//  justify-content: center;

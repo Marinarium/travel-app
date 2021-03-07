@@ -76,6 +76,24 @@ table {
   letter-spacing: 0.065em;
   color: #262626;
   font-size: 28px;
+  text-decoration: none;
+  transition: 0.4s ease-in;
+}
+.notFound a {
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 177%;
+  letter-spacing: 0.065em;
+  color: #262626;
+  font-size: 28px;
+  text-decoration-line: underline;
+  transition-duration: 300ms;
+}
+.notFound a:hover {
+  outline: none;
+  color: #5bbb76;
 }
 
 /*# sourceMappingURL=NotFound.css.map */
