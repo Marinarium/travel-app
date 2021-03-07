@@ -6,9 +6,9 @@ import Footer from "../Footer/Footer";
 import FirstScreen from "../FirstScreen/FirstScreen";
 import CountriesMenu from "../CountriesMenu/CountriesMenu";
 import CountryPage from "../CountryPage/CountryPage";
+import NotFound from "../NotFound/NotFound";
 
 import "./App.scss"
-import NotFound from "../NotFound/NotFound";
 
 export default function App() {
     return (
