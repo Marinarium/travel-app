@@ -4,7 +4,7 @@ import CountryCard from "../CountryCard/CountryCard";
 
 import "./CountriesMenu.scss"
 
-export default function App() {
+export default function CountriesMenu() {
     const countriesInfo = [
         {id: 1, country: 'France', capital: 'Paris', cover: 'images/temp.jpg'},
         {id: 2, country: 'The Netherlands', capital: 'Amsterdam', cover: 'images/temp.jpg'},
