@@ -23,7 +23,6 @@ export default function Map() {
       `https://raw.githubusercontent.com/johan/world.geo.json/master/countries/NLD.geo.json`
     )
       .then((data) => data.json())
-      .then((data) => data)
       .then((data) => {
         setMultyPoligon(data);
         setPoligonActive(true);
