@@ -18,38 +18,13 @@ export default class App extends Component {
     }
 
     onCountryChange = (country, iso) => {
-        // this.setState({country: country});
         this.setState((country) => {
             return {currentCountry: country}
         });
         this.setState({currentISO: iso});
     }
 
-    // _apiBase = 'https://travel-app-backend-rsschool.herokuapp.com';
-    //
-    // componentDidMount() {
-    //     fetch(`${this._apiBase}/countries/${this.state.currentISO}`)
-    //         .then(res => res.json())
-    //         .then(
-    //             (result) => {
-    //                 this.setState({
-    //                     isLoaded: true,
-    //                     countryData: result[0]
-    //                 });
-    //             },
-    //             (error) => {
-    //                 this.setState({
-    //                     isLoaded: true,
-    //                     error
-    //                 });
-    //             }
-    //         )
-    // }
-
-
     render() {
-        const {error, isLoaded, countryData} = this.state;
-
         return (
             <Router>
                 <div className="main-wrapper">
