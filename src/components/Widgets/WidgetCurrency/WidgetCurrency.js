@@ -3,9 +3,26 @@ import React from "react";
 import "./WidgetCurrency.scss"
 
 export default function WidgetCurrency({iso, currency}) {
+
+    const [curCode, setCurCode] = useState('');
+    const [money, setMoney] = useState();
+
+    useEffect(() => {
+        if (iso === 'FRA' || iso === 'DEU' || iso === 'NLD') {
+            setCurCode('EUR');
+            setMoney((prev) => {return 1})
+        }
+        if (iso === 'AUS') {
+            setCurCode('AUD');
+            setMoney((prev) => {return 1})
+        }
+    }, [iso]);
+
+    console.log(curCode)
+
     return (
         <section className="wg-currency">
-            <h3 className="wg-currency__title">local currency rate</h3>
+            <h3 className="wg-currency__title">local currency rate in {iso}</h3>
             <table className="wg-currency__table">
                 <thead>
                     <tr>
@@ -22,13 +39,13 @@ export default function WidgetCurrency({iso, currency}) {
                     </tr>
                     <tr>
                         <td>EUR</td>
-                        <td>2.6073</td>
-                        <td>2.615</td>
+                        <td>{money}</td>
+                        <td>{money}</td>
                     </tr>
                     <tr>
-                        <td>RU</td>
-                        <td>2.6073</td>
-                        <td>2.615</td>
+                        <td>BYN</td>
+                        <td>{currency[curCode]}</td>
+                        <td>{currency[curCode]}</td>
                     </tr>
                 </tbody>
             </table>

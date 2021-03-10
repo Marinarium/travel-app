@@ -4,9 +4,9 @@ import WidgetCurrency from "../../components/Widgets/WidgetCurrency/WidgetCurren
 
 import "./SightsAndCurrency.scss"
 
-const CURR_API = 'https://www.nbrb.by/api/exrates/rates?periodicity=0';
+const CURR_API = 'https://v6.exchangerate-api.com/v6/0b3adebd155aed780b095eb2/latest/BYN';
 
-export default function SightsAndCurrency() {
+export default function SightsAndCurrency({iso}) {
 
   const [currency, setCurrency] = useState([]);
   console.log(currency);
@@ -15,7 +15,7 @@ export default function SightsAndCurrency() {
     fetch(CURR_API)
       .then(res => res.json())
       .then(data => {
-        setCurrency([...data])
+        setCurrency(data.conversion_rates)
       })
   }, []);
 
@@ -24,8 +24,9 @@ export default function SightsAndCurrency() {
     <div className="sights-and-currency">
       <AboutSights/>
       <aside className="widgets">
-        <WidgetCurrency/>
+        <WidgetCurrency iso={iso} currency={currency}/>
       </aside>
     </div>
   )
 }
+
