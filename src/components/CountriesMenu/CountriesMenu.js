@@ -1,35 +1,49 @@
-import React from "react";
+import React, {Component} from "react";
 
 import CountryCard from "../CountryCard/CountryCard";
 
 import "./CountriesMenu.scss"
 
-export default function CountriesMenu() {
-    const countriesInfo = [
-        {id: 1, country: 'France', capital: 'Paris', cover: 'images/temp.jpg'},
-        {id: 2, country: 'The Netherlands', capital: 'Amsterdam', cover: 'images/temp.jpg'},
-        {id: 3, country: 'Germany', capital: 'Berlin', cover: 'images/temp.jpg'},
-        {id: 4, country: 'Australia', capital: 'Canberra', cover: 'images/temp.jpg'},
-        {id: 5, country: 'Morocco', capital: 'Rabat', cover: 'images/temp.jpg'},
-        {id: 6, country: 'Japan', capital: 'Tokyo', cover: 'images/temp.jpg'},
-        {id: 7, country: 'Brazil', capital: 'Brasília', cover: 'images/temp.jpg'},
-        {id: 8, country: 'Canada', capital: 'Ottawa', cover: 'images/temp.jpg'}
-    ];
+export default class CountriesMenu extends Component {
 
-    const allCards = countriesInfo.map(({id, country, capital, cover}) => {
+    state = {
+        country: null,
+        capital: null,
+        cover: null
+    }
+
+
+    render() {
+        const {onCountryChange} = this.props;
+
+        const countriesInfo = [
+            {id: 1, country: 'France', capital: 'name', cover: 'images/temp.jpg', iso:'FRA'},
+            {id: 2, country: 'The Netherlands', capital: 'Amsterdam', cover: 'images/temp.jpg', iso:'NLD'},
+            {id: 3, country: 'Germany', capital: 'Berlin', cover: 'images/temp.jpg', iso:'DEU'},
+            {id: 4, country: 'Australia', capital: 'Canberra', cover: 'images/temp.jpg', iso:'AUS'},
+            {id: 5, country: 'Morocco', capital: 'Rabat', cover: 'images/temp.jpg', iso:'MAR'},
+            {id: 6, country: 'Japan', capital: 'Tokyo', cover: 'images/temp.jpg', iso:'JPN'},
+            {id: 7, country: 'Brazil', capital: 'Brasília', cover: 'images/temp.jpg', iso:'BRA'},
+            {id: 8, country: 'Canada', capital: 'Ottawa', cover: 'images/temp.jpg', iso:'CAN'}
+        ];
+
+        const allCards = countriesInfo.map(({id, country, capital, cover, iso}) => {
+            return (
+                <CountryCard
+                    key={id}
+                    country={country}
+                    capital={capital}
+                    cover={cover}
+                    iso={iso}
+                    onCountryChange={() => onCountryChange(country, iso)}
+                />
+            );
+        });
+
         return (
-            <CountryCard
-                key={id}
-                country={country}
-                capital={capital}
-                cover={cover}
-            />
+            <section className="countries-menu">
+                {allCards}
+            </section>
         );
-    });
-
-    return (
-        <section className="countries-menu">
-            {allCards}
-        </section>
-    )
+    }
 }

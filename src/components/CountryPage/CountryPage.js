@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 
 import FirstScreenOfCountry from "../FirstScreenOfCountry/FirstScreenOfCountry";
 import MainCountryInfo from "../../containers/MainCountryInfo/MainCountryInfo";
@@ -9,15 +9,21 @@ import Map from "../Map/Map";
 
 import "./CountryPage.scss"
 
-export default function CountryPage() {
-    return (
-        <main className="main">
-            <FirstScreenOfCountry/>
-            <MainCountryInfo/>
-            <SightsCarousel/>
-            <SightsAndCurrency/>
-            <Video/>
-            <Map/>
-        </main>
-    )
+export default class CountriesPage extends Component {
+    render() {
+        const{iso} = this.props;
+
+        console.log(iso);
+
+        return (
+            <main className="main">
+                <FirstScreenOfCountry/>
+                <MainCountryInfo iso={iso}/>
+                <SightsCarousel/>
+                <SightsAndCurrency/>
+                <Video/>
+                <Map/>
+            </main>
+        )
+    }
 }
