@@ -25,7 +25,31 @@ export default class App extends Component {
         this.setState({currentISO: iso});
     }
 
+    // _apiBase = 'https://travel-app-backend-rsschool.herokuapp.com';
+    //
+    // componentDidMount() {
+    //     fetch(`${this._apiBase}/countries/${this.state.currentISO}`)
+    //         .then(res => res.json())
+    //         .then(
+    //             (result) => {
+    //                 this.setState({
+    //                     isLoaded: true,
+    //                     countryData: result[0]
+    //                 });
+    //             },
+    //             (error) => {
+    //                 this.setState({
+    //                     isLoaded: true,
+    //                     error
+    //                 });
+    //             }
+    //         )
+    // }
+
+
     render() {
+        const {error, isLoaded, countryData} = this.state;
+
         return (
             <Router>
                 <div className="main-wrapper">
@@ -39,7 +63,10 @@ export default class App extends Component {
                             <Route path="/:country"
                                    render={({match}) => {
                                        const {country} = match.params;
-                                       return <CountryPage country={country} iso={this.state.currentISO}/>
+                                       return <CountryPage
+                                           country={country}
+                                           iso={this.state.currentISO}
+                                       />
                                    }}
                             />
                             <Route path="*" component={NotFound}/>
