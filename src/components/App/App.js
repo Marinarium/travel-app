@@ -15,14 +15,14 @@ export default class App extends Component {
     state = {
         currentCountry: '',
         currentISO: ''
-    }
+    };
 
     onCountryChange = (country, iso) => {
         this.setState((country) => {
             return {currentCountry: country}
         });
         this.setState({currentISO: iso});
-    }
+    };
 
     render() {
         return (
