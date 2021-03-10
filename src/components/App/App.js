@@ -18,7 +18,6 @@ export default class App extends Component {
     }
 
     onCountryChange = (country, iso) => {
-        // this.setState({country: country});
         this.setState((country) => {
             return {currentCountry: country}
         });
@@ -39,7 +38,10 @@ export default class App extends Component {
                             <Route path="/:country"
                                    render={({match}) => {
                                        const {country} = match.params;
-                                       return <CountryPage country={country} iso={this.state.currentISO}/>
+                                       return <CountryPage
+                                           country={country}
+                                           iso={this.state.currentISO}
+                                       />
                                    }}
                             />
                             <Route path="*" component={NotFound}/>
