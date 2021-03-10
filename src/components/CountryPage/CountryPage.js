@@ -61,7 +61,7 @@ export default class CountriesPage extends Component {
                 <SightsCarousel/>
                 <SightsAndCurrency/>
                 <Video/>
-                <Map coordinates={coordinates} lat={lat} long={long}/>
+                <Map coordinates={coordinates} lat={lat} long={long} country={country} capital={capital} iso={iso}/>
             </main>
         )
     }
