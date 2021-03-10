@@ -15,7 +15,7 @@ export default class App extends Component {
     state = {
         currentCountry: '',
         currentISO: ''
-    }
+    };
 
     onCountryChange = (country, iso) => {
         // this.setState({country: country});
@@ -23,7 +23,7 @@ export default class App extends Component {
             return {currentCountry: country}
         });
         this.setState({currentISO: iso});
-    }
+    };
 
     render() {
         return (

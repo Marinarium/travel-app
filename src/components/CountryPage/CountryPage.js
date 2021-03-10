@@ -20,7 +20,7 @@ export default class CountriesPage extends Component {
                 <FirstScreenOfCountry/>
                 <MainCountryInfo iso={iso}/>
                 <SightsCarousel/>
-                <SightsAndCurrency/>
+                <SightsAndCurrency iso={iso} />
                 <Video/>
                 <Map/>
             </main>
