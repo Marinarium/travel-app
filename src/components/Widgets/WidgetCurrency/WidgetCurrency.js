@@ -2,7 +2,7 @@ import React from "react";
 
 import "./WidgetCurrency.scss"
 
-export default function WidgetCurrency() {
+export default function WidgetCurrency(props) {
     return (
         <section className="wg-currency">
             <h3 className="wg-currency__title">local currency rate</h3>
@@ -16,7 +16,7 @@ export default function WidgetCurrency() {
                 </thead>
                 <tbody>
                     <tr>
-                        <td>USD</td>
+                        <td>{}</td>
                         <td>2.6073</td>
                         <td>2.615</td>
                     </tr>
