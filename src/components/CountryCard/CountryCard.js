@@ -1,14 +1,16 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
+import {UpdateStringForPath} from "../../helpers";
+
 import "./CountryCard.scss"
 
-export default function CountryCard({id, country, capital, cover}) {
+export default function CountryCard({id, country, capital, cover, onCountryChange, iso}) {
 
     return (
 
-        <div className="card" key={id}>
-            <Link  className="card__link" to={`/${country.toLowerCase().replace(/ /g, '-')}`}>
+        <div className="card" key={id} onClick={onCountryChange} iso={iso}>
+            <Link  className="card__link" to={UpdateStringForPath(country)}>
             <img src={cover} alt={country} className="card__img"/>
             <div className="card__box">
                 <div className="card__content">
