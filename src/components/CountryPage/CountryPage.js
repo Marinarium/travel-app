@@ -11,7 +11,6 @@ import {getISObyPath} from "../../helpers";
 
 import "./CountryPage.scss"
 
-
 export default class CountriesPage extends Component {
 
     countryService = new CountryService();
