@@ -15,12 +15,12 @@ import FullscreenControl from "react-leaflet-fullscreen";
 
 const purpleOptions = { color: "#21A683", fillColor: "#5bbb76" };
 
-export default function Map() {
+export default function Map(props) {
   const [multyPoligon, setMultyPoligon] = useState([]);
   const [polygonActive, setPoligonActive] = useState(false);
   useEffect(() => {
     fetch(
-      `https://raw.githubusercontent.com/johan/world.geo.json/master/countries/NLD.geo.json`
+      `https://raw.githubusercontent.com/johan/world.geo.json/master/countries/${props.iso}.geo.json`
     )
       .then((data) => data.json())
       .then((data) => {
@@ -30,8 +30,8 @@ export default function Map() {
   }, []);
   return (
     <section className="map">
-      {polygonActive ? (
-        <MapContainer center={[52.22, 4.53]} zoom={7} id="map_body">
+      {polygonActive && props.iso.length ? (
+        <MapContainer center={[props.lat, props.long]} zoom={5} id="map_body">
           <LayersControl position="topright">
             <LayersControl.BaseLayer checked name="OpenStreetMap.Mapnik">
               <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
@@ -49,10 +49,12 @@ export default function Map() {
               <TileLayer url="https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png" />
             </LayersControl.BaseLayer>
           </LayersControl>
-          <GeoJSON data={multyPoligon.features} style={purpleOptions} />
+          <GeoJSON data={multyPoligon.features} style={purpleOptions}>
+            <Popup>{props.country}</Popup>
+          </GeoJSON>
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-          <CircleMarker center={[52.22, 4.53]} radius={10}>
-            <Popup>Сapital</Popup>
+          <CircleMarker center={[props.lat, props.long]} radius={15}>
+            <Popup>{props.capital}</Popup>
           </CircleMarker>
           <FullscreenControl position="topleft" />
         </MapContainer>
