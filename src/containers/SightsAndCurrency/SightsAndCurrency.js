@@ -6,7 +6,7 @@ import "./SightsAndCurrency.scss"
 
 const CURR_API = 'https://v6.exchangerate-api.com/v6/0b3adebd155aed780b095eb2/latest/BYN';
 
-export default function SightsAndCurrency({iso, currency_code}) {
+export default function SightsAndCurrency({iso, currencyCode}) {
 
   const [currency, setCurrency] = useState([]);
 
@@ -22,7 +22,7 @@ export default function SightsAndCurrency({iso, currency_code}) {
     <div className="sights-and-currency">
       <AboutSights/>
       <aside className="widgets">
-        <WidgetCurrency iso={iso} currency={currency} currency_code={currency_code} />
+        <WidgetCurrency iso={iso} currency={currency} currencyCode={currencyCode} />
       </aside>
     </div>
   )

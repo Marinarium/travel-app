@@ -1,43 +1,22 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 
 import "./WidgetCurrency.scss"
 
-export default function WidgetCurrency({iso, currency, currency_code}) {
+export default function WidgetCurrency({currency, currencyCode}) {
 
     const [usd, setUsd] = useState();
     const [eur, setEur] = useState();
     const [byn, setByn] = useState();
 
-    console.log(iso)
-
-
     useEffect(() => {
-/*        if (iso === 'FRA' || iso === 'DEU' || iso === 'NLD') {
-            converting();
-        }
-        if (iso === 'AUS') {
-            converting();
-        }
-        if (iso === 'MAR') {
-            converting();
-        }
-        if (iso === 'JPN') {
-            converting();
-        }
-        if (iso === 'BRA') {
-            converting();
-        }
-        if (iso === 'CAN') {
-            converting();
-        }*/
+        setUsd((usd) => {return (currency.USD/currency[currencyCode]).toFixed(4)});
+        setEur((eur) => {return (currency.EUR/currency[currencyCode]).toFixed(4)});
+        setByn((byn) => {return (1/currency[currencyCode]).toFixed(4)});
+    }, [currency, currencyCode]);
 
-        setUsd((usd) => {return (currency.USD/currency[currency_code]).toFixed(3)});
-        setEur((eur) => {return (currency.EUR/currency[currency_code]).toFixed(3)});
-        setByn((byn) => {return (1/currency[currency_code]).toFixed(3)});
-
-    }, [iso, currency, currency_code]);
-
-    console.log(usd, eur, byn);
+    function sellingConvert(currency) {
+        return (currency * 1.003).toFixed(4)
+    }
 
     return (
         <section className="wg-currency">
@@ -54,17 +33,17 @@ export default function WidgetCurrency({iso, currency, currency_code}) {
                     <tr>
                         <td>USD</td>
                         <td>{usd}</td>
-                        <td>{usd}</td>
+                        <td>{sellingConvert(usd)}</td>
                     </tr>
                     <tr>
                         <td>EUR</td>
                         <td>{eur}</td>
-                        <td>{eur}</td>
+                        <td>{currencyCode === 'EUR' ? eur : sellingConvert(eur)}</td>
                     </tr>
                     <tr>
                         <td>BYN</td>
                         <td>{byn}</td>
-                        <td>{byn}</td>
+                        <td>{sellingConvert(byn)}</td>
                     </tr>
                 </tbody>
             </table>
