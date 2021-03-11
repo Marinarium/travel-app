@@ -24,7 +24,8 @@ export default class CountriesPage extends Component {
         description: null,
         coordinates: null,
         lat: null,
-        long: null
+        long: null,
+        currencyCode: null
     }
 
     constructor() {
@@ -43,14 +44,15 @@ export default class CountriesPage extends Component {
                     description: country[0].description.description_eng,
                     coordinates: country[0].capital.coordinates,
                     lat: country[0].capital.coordinates.lat,
-                    long: country[0].capital.coordinates.long
+                    long: country[0].capital.coordinates.long,
+                    currencyCode: country[0].currency_code
                 });
             });
     }
 
     render() {
         const {iso} = this.props;
-        const {country, capital, description, coordinates, lat, long} = this.state;
+        const {country, capital, description, coordinates, lat, long, currencyCode} = this.state;
 
         console.log(iso);
 
@@ -59,7 +61,7 @@ export default class CountriesPage extends Component {
                 <FirstScreenOfCountry country={country} capital={capital}/>
                 <MainCountryInfo iso={iso} description={description}/>
                 <SightsCarousel/>
-                <SightsAndCurrency/>
+                <SightsAndCurrency iso={iso} currencyCode={currencyCode}/>
                 <Video/>
                 <Map coordinates={coordinates} lat={lat} long={long} country={country} capital={capital} iso={iso}/>
             </main>

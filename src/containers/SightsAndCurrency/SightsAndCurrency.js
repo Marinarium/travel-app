@@ -4,12 +4,12 @@ import WidgetCurrency from "../../components/Widgets/WidgetCurrency/WidgetCurren
 
 import "./SightsAndCurrency.scss"
 
-export default function SightsAndCurrency() {
+export default function SightsAndCurrency({iso, currencyCode}) {
     return (
         <div className="sights-and-currency">
             <AboutSights/>
             <aside className="widgets">
-                <WidgetCurrency/>
+                <WidgetCurrency iso={iso} currencyCode={currencyCode}/>
             </aside>
         </div>
     )
