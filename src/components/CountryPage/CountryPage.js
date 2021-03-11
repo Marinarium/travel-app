@@ -11,16 +11,15 @@ import "./CountryPage.scss"
 
 export default class CountriesPage extends Component {
     render() {
-        const{iso} = this.props;
-
-        console.log(iso);
+        const{iso, currency_code} = this.props;
+        console.log(currency_code);
 
         return (
             <main className="main">
                 <FirstScreenOfCountry/>
-                <MainCountryInfo iso={iso}/>
+                <MainCountryInfo iso={iso} currency_code={currency_code} />
                 <SightsCarousel/>
-                <SightsAndCurrency iso={iso} />
+                <SightsAndCurrency iso={iso} currency_code={currency_code} />
                 <Video/>
                 <Map/>
             </main>
