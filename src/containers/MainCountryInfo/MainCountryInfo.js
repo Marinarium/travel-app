@@ -6,10 +6,10 @@ import WidgetWeather from "../../components/Widgets/WidgetWeather/WidgetWeather"
 
 import "./MainCountryInfo.scss"
 
-export default function MainCountryInfo() {
+export default function MainCountryInfo({description}) {
     return (
         <div className="main-info">
-            <AboutCountry/>
+            <AboutCountry description={description}/>
             <aside className="widgets">
                 <WidgetTime/>
                 <WidgetWeather/>

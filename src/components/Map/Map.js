@@ -9,7 +9,6 @@ import {
 } from "react-leaflet";
 
 import "./Map.scss";
-
 import "react-leaflet-fullscreen/dist/styles.css";
 import FullscreenControl from "react-leaflet-fullscreen";
 
