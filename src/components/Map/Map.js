@@ -29,7 +29,7 @@ export default function Map(props) {
   }, []);
   return (
     <section className="map">
-      {polygonActive && props.iso.length ? (
+      {polygonActive && props.iso.length && props.long ? (
         <MapContainer center={[props.lat, props.long]} zoom={5} id="map_body">
           <LayersControl position="topright">
             <LayersControl.BaseLayer checked name="OpenStreetMap.Mapnik">
