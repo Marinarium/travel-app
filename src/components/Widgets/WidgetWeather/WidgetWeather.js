@@ -17,7 +17,7 @@ export default function WidgetWeather({capital, temperature, humidity, wind, ico
         {temperature}°C
       </div>
       <div className="wg-weather__humidity">humidity {humidity}%</div>
-      <div className="wg-weather__wind">wind {wind} m/s</div>
+      <div className="wg-weather__wind">wind {wind}m/s</div>
     </section>
   )
 }

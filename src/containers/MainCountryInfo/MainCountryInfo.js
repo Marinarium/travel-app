@@ -7,24 +7,31 @@ import WidgetWeather from "../../components/Widgets/WidgetWeather/WidgetWeather"
 import "./MainCountryInfo.scss"
 import {API_Weather} from "../../services/apiKeys";
 
-export default function MainCountryInfo({iso, description, capital}) {
+export default function MainCountryInfo({description, capital}) {
 
-  // const [time, setTime] = useState('');
-  // const [date, setDate] = useState('');
+  const [time, setTime] = useState(new Date());
+  const [weekDay, setWeekDay] = useState();
+  const [numDate, setNumDate] = useState();
+  const [month, setMonth] = useState();
   const [temperature, setTemperature] = useState();
   const [humidity, setHumidity] = useState();
   const [wind, setWind] = useState();
   const [icon, setIcon] = useState();
-/*
+
   useEffect(() => {
     if (capital) {
-      fetch(`http://api.timezonedb.com/v2.1/list-time-zone`)
-        .then(res => res.json())
-        .then(data => {
-          console.log(data)
-        })
+      setWeekDay(() => new Date().getDay());
+      setNumDate(() => new Date().getDate());
+      setMonth(() => new Date().getMonth());
     }
-  }, [iso, capital]);*/
+  }, [capital]);
+
+  useEffect(() => {
+    if (capital) {
+      let timerID = setInterval( () => setTime(() => new Date()), 1000 );
+      return () => clearInterval(timerID);
+    }
+  }, [capital]);
 
   useEffect(() => {
     if (capital) {
@@ -33,7 +40,7 @@ export default function MainCountryInfo({iso, description, capital}) {
         .then(data => {
           setTemperature(() => (data.main.temp).toFixed(0));
           setHumidity(() => data.main.humidity);
-          setWind(() => data.wind.speed);
+          setWind(() => (data.wind.speed).toFixed(0));
           setIcon(() => data.weather[0].icon)
         })
     }
@@ -43,7 +50,13 @@ export default function MainCountryInfo({iso, description, capital}) {
     <div className="main-info">
       <AboutCountry description={description}/>
       <aside className="widgets">
-        <WidgetTime capital={capital}/>
+        <WidgetTime
+          capital={capital}
+          time={time}
+          weekDay={weekDay}
+          numDate={numDate}
+          month={month}
+        />
         <WidgetWeather
           capital={capital}
           temperature={temperature}
