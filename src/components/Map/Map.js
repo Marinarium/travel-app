@@ -13,20 +13,23 @@ import "react-leaflet-fullscreen/dist/styles.css";
 import FullscreenControl from "react-leaflet-fullscreen";
 
 const purpleOptions = { color: "#21A683", fillColor: "#5bbb76" };
+const purpleOptionsCircle = { color: "#21A613", fillColor: "#5bbb76" };
 
 export default function Map(props) {
   const [multyPoligon, setMultyPoligon] = useState([]);
   const [polygonActive, setPoligonActive] = useState(false);
   useEffect(() => {
-    fetch(
-      `https://raw.githubusercontent.com/johan/world.geo.json/master/countries/${props.iso}.geo.json`
-    )
-      .then((data) => data.json())
-      .then((data) => {
-        setMultyPoligon(data);
-        setPoligonActive(true);
-      });
-  }, []);
+    if (props.iso !== null) {
+      fetch(
+        `https://raw.githubusercontent.com/johan/world.geo.json/master/countries/${props.iso}.geo.json`
+      )
+        .then((data) => data.json())
+        .then((data) => {
+          setMultyPoligon(data);
+          setPoligonActive(true);
+        });
+    }
+  }, [props.iso]);
   return (
     <section className="map">
       {polygonActive && props.iso.length && props.long ? (
@@ -52,7 +55,7 @@ export default function Map(props) {
             <Popup>{props.country}</Popup>
           </GeoJSON>
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-          <CircleMarker center={[props.lat, props.long]} radius={15}>
+          <CircleMarker center={[props.lat, props.long]} radius={8} style={purpleOptionsCircle}  >
             <Popup>{props.capital}</Popup>
           </CircleMarker>
           <FullscreenControl position="topleft" />
