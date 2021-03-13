@@ -54,12 +54,29 @@ export default class CountriesPage extends Component {
 
         return (
             <main className="main">
-                <FirstScreenOfCountry country={country} capital={capital}/>
-                <MainCountryInfo iso={iso} description={description}/>
+                <FirstScreenOfCountry
+                  country={country}
+                  capital={capital}
+                />
+                <MainCountryInfo
+                  iso={iso}
+                  description={description}
+                  capital={capital}
+                />
                 <SightsCarousel/>
-                <SightsAndCurrency iso={iso} currencyCode={currencyCode} />
+                <SightsAndCurrency
+                  iso={iso}
+                  currencyCode={currencyCode}
+                />
                 <Video/>
-                <Map coordinates={coordinates} lat={lat} long={long} country={country} capital={capital} iso={iso}/>
+                <Map
+                  coordinates={coordinates}
+                  lat={lat}
+                  long={long}
+                  country={country}
+                  capital={capital}
+                  iso={iso}
+                />
             </main>
         )
     }

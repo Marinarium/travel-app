@@ -2,10 +2,10 @@ import React from "react";
 
 import "./WidgetWeather.scss"
 
-export default function WidgetWeather() {
+export default function WidgetWeather({capital}) {
     return (
         <section className="wg-weather">
-            <h3 className="wg-weather__title">Weather in Amsterdam</h3>
+            <h3 className="wg-weather__title">Weather in {capital}</h3>
             <div className="wg-weather__temperature">☁ -1.05°C</div>
             <div className="wg-weather__humidity">humidity 93%</div>
             <div className="wg-weather__wind">wind 4 m/s</div>
