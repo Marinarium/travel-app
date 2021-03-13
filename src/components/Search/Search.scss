@@ -1,4 +1,4 @@
-@import '../../assets/styles/main';
+@import "../../assets/styles/main";
 
 .search {
   float: right;
@@ -39,7 +39,8 @@
 
 /*--- Animation ---*/
 .search__line {
-  &::before, &::after {
+  &::before,
+  &::after {
     position: absolute;
     bottom: -1px;
     width: 0;
@@ -72,7 +73,8 @@
   transition-duration: 350ms;
 }
 
-.search__button, .clear__button {
+.search__button,
+.clear__button {
   height: 30px;
   width: 42px;
   position: absolute;
@@ -88,5 +90,9 @@
   }
 }
 .clear__button {
-	right: -15px;
+  right: -15px;
+}
+
+.search_noVisibility {
+  visibility: hidden;
 }
