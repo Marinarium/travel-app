@@ -7,7 +7,7 @@ import LangSelect from "../LangSelect/LangSelect";
 import "./Header.scss";
 import { getAvatar } from "../../services/user-services";
 
-export default function Header() {
+export default function Header(props) {
   const [isLogin, setLogin] = useState(false);
   const [avatar, setAvatar] = useState(null);
   useEffect(() => {
