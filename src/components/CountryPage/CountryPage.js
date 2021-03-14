@@ -15,6 +15,7 @@ export default class CountriesPage extends Component {
   currentISOfromPath = getISObyPath();
 
   state = {
+    countryEng: null,
     country: null,
     countryLang: null,
     capital: null,
@@ -24,6 +25,7 @@ export default class CountriesPage extends Component {
     lat: null,
     long: null,
     currencyCode: null,
+    sights: [],
     iso: null,
   };
 
@@ -35,6 +37,7 @@ export default class CountriesPage extends Component {
   updateCountry() {
     this.countryService.getCountry(this.currentISOfromPath).then((country) => {
       this.setState({
+        countryEng: country[0].country.country_eng,
         country: country[0].country[`country_eng`],
         capital: country[0].capital[`capital_eng`],
         countryLang: country[0].country[`country_${this.props.language}`],
@@ -45,6 +48,7 @@ export default class CountriesPage extends Component {
         lat: country[0].capital.coordinates.lat,
         long: country[0].capital.coordinates.long,
         currencyCode: country[0].currency_code,
+        sights: country[0].sights,
         iso: country[0].iso,
       });
     });
@@ -56,6 +60,7 @@ export default class CountriesPage extends Component {
 
   render() {
     const {
+      countryEng,
       country,
       capital,
       countryLang,
@@ -65,8 +70,10 @@ export default class CountriesPage extends Component {
       lat,
       long,
       currencyCode,
+      sights,
       iso,
     } = this.state;
+
 
     return (
       <main className="main">
@@ -84,12 +91,17 @@ export default class CountriesPage extends Component {
           capitalLang={capitalLang}
           language={this.props.language}
         />
-        <SightsCarousel language={this.props.language} />
+        <SightsCarousel
+            countryEng={countryEng}
+            sights={sights}
+            language={this.props.language}
+        />
         <SightsAndCurrency
           iso={iso}
           capital={capital}
           capitalLang={capitalLang}
           currencyCode={currencyCode}
+          sights={sights}
           language={this.props.language}
         />
         <Video language={this.props.language} />

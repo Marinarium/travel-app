@@ -5,6 +5,14 @@
   padding-left: 50px;
 }
 
+.about-sights__item {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
 .about-sights__title {
   @include main-font(bold, 24px);
   letter-spacing: 0.065em;
