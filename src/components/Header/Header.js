@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "./images/logo.svg";
@@ -24,8 +25,11 @@ export default function Header() {
           <img src={logo} alt='Logo TravelApp' className='logo__img' />
         </Link>
       </div>
-      <Search />
-      <LangSelect />
+      <Search page={props.page}
+        language={props.language}
+        countriesInfo={props.countriesInfo}/>
+      <LangSelect onLanguageChange={props.onLanguageChange}
+        language={props.language}/>
       {isLogin ? setProfile(avatar) : setSigns()}
     </header>
   );
@@ -46,3 +50,4 @@ const setSigns = () => {
     </div>
   );
 };
+

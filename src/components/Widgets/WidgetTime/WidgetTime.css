@@ -54,46 +54,45 @@ table {
 
 /*--- Colors ---*/
 /*--- Others ---*/
-.main {
-  flex-grow: 1;
+.wg-time {
+  background: #fbfbfb;
+  border: 3px solid #E5E5E5;
+  box-sizing: border-box;
+  border-radius: 2px;
+  padding: 24px 25px 32px;
+  min-width: 290px;
+  margin-bottom: 30px;
 }
 
-.notFound {
-  position: absolute;
-  width: 100%;
-  top: 20%;
-  text-align: center;
-}
-.notFound h1 {
-  font-size: 48px;
-}
-.notFound h3 {
-  font-family: "Raleway", sans-serif;
+.wg-time__title {
+  font-family: "Nunito", sans-serif;
   font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 177%;
-  letter-spacing: 0.065em;
-  color: #262626;
-  font-size: 28px;
-  text-decoration: none;
-  transition: 0.4s ease-in;
-}
-.notFound a {
-  font-family: "Raleway", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 177%;
-  letter-spacing: 0.065em;
-  color: #262626;
-  font-size: 28px;
-  text-decoration-line: underline;
-  transition-duration: 300ms;
-}
-.notFound a:hover {
-  outline: none;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 125%;
+  line-height: 125%;
   color: #5bbb76;
+  margin-bottom: 13px;
 }
 
-/*# sourceMappingURL=NotFound.css.map */
+.wg-time__date {
+  font-family: "Nunito", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 125%;
+  color: #262626;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+}
+
+.wg-time__clock {
+  font-family: "Nunito", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 125%;
+  color: #98AFBA;
+}
+
+/*# sourceMappingURL=WidgetTime.css.map */
