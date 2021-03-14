@@ -17,6 +17,13 @@
 
 .wg-weather__temperature {
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+
+  & img {
+    width: 30px;
+    margin-right: 5px;
+  }
 }
 
 .wg-weather__humidity {
