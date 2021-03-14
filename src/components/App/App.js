@@ -20,7 +20,7 @@ export default class App extends Component {
         currentCountry: "",
         currentISO: "",
         language: localStorage.getItem("language") || "eng",
-        countriesInfo: [],
+        countriesInfo: []
     };
 
     componentDidMount() {

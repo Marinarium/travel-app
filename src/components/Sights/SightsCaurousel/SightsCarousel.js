@@ -5,6 +5,7 @@ import "./SightsCarousel.scss"
 import leftArrow from "./images/arrow-left.svg"
 import rightArrow from "./images/arrow-right.svg"
 import CarouselItem from "../CarouselItem/CarouselItem";
+import {UpdateStringForPath} from "../../../helpers";
 
 export default function SightsCarousel({sights, countryEng}) {
 
@@ -13,7 +14,7 @@ export default function SightsCarousel({sights, countryEng}) {
             return (
                 <CarouselItem
                     key={i}
-                    img={`images/${countryEng.toLowerCase()}/${item.img}`}
+                    img={`images/${UpdateStringForPath(countryEng)}/${item.img}`}
                     title={item.name_eng}
                     country={countryEng}
                 />

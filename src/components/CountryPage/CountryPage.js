@@ -78,6 +78,7 @@ export default class CountriesPage extends Component {
     return (
       <main className="main">
         <FirstScreenOfCountry
+          countryEng={countryEng}
           country={country}
           capital={capital}
           countryLang={countryLang}
