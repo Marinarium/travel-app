@@ -1,14 +1,18 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 
 import AboutCountry from "../AboutCountry/AboutCountry";
 import WidgetTime from "../../components/Widgets/WidgetTime/WidgetTime";
 import WidgetWeather from "../../components/Widgets/WidgetWeather/WidgetWeather";
 
-import "./MainCountryInfo.scss"
-import {API_Weather} from "../../services/apiKeys";
+import "./MainCountryInfo.scss";
+import { API_Weather } from "../../services/apiKeys";
 
-export default function MainCountryInfo({description, capital}) {
-
+export default function MainCountryInfo({
+  description,
+  capital,
+  language,
+  capitalLang,
+}) {
   const [time, setTime] = useState(new Date());
   const [temperature, setTemperature] = useState();
   const [humidity, setHumidity] = useState();
@@ -17,33 +21,39 @@ export default function MainCountryInfo({description, capital}) {
 
   useEffect(() => {
     if (capital) {
-      let timerID = setInterval( () => setTime(() => new Date()), 1000 );
+      let timerID = setInterval(() => setTime(() => new Date()), 1000);
       return () => clearInterval(timerID);
     }
   }, [capital]);
 
   useEffect(() => {
     if (capital) {
-      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${capital}&appid=${API_Weather}&units=metric`)
-        .then(res => res.json())
-        .then(data => {
-          setTemperature(() => (data.main.temp).toFixed(0));
+      fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${capital}&appid=${API_Weather}&units=metric`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          setTemperature(() => data.main.temp.toFixed(0));
           setHumidity(() => data.main.humidity);
-          setWind(() => (data.wind.speed).toFixed(0));
-          setIcon(() => data.weather[0].icon)
-        })
+          setWind(() => data.wind.speed.toFixed(0));
+          setIcon(() => data.weather[0].icon);
+        });
     }
   }, [capital]);
 
   return (
     <div className="main-info">
-      <AboutCountry description={description}/>
+      <AboutCountry description={description} language={language} />
       <aside className="widgets">
         <WidgetTime
           capital={capital}
+          capitalLang={capitalLang}
           time={time}
+          language={language}
         />
         <WidgetWeather
+          capitalLang={capitalLang}
+          language={language}
           capital={capital}
           temperature={temperature}
           humidity={humidity}
@@ -52,5 +62,5 @@ export default function MainCountryInfo({description, capital}) {
         />
       </aside>
     </div>
-  )
+  );
 }
