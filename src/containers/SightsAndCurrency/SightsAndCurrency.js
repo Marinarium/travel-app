@@ -5,7 +5,7 @@ import WidgetCurrency from "../../components/Widgets/WidgetCurrency/WidgetCurren
 import "./SightsAndCurrency.scss";
 import { API_Currency } from "../../services/apiKeys";
 
-export default function SightsAndCurrency({ iso, currencyCode, language }) {
+export default function SightsAndCurrency({ iso, currencyCode, language, sights }) {
   const [currency, setCurrency] = useState([]);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ export default function SightsAndCurrency({ iso, currencyCode, language }) {
 
   return (
     <div className="sights-and-currency">
-      <AboutSights />
+      <AboutSights sights={sights}/>
       <aside className="widgets">
         <WidgetCurrency
           iso={iso}
