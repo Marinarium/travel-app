@@ -21,7 +21,9 @@ export default function Map(props) {
   useEffect(() => {
     if (props.iso !== null) {
       fetch(
-        `https://raw.githubusercontent.com/johan/world.geo.json/master/countries/${props.iso}.geo.json`
+        `https://raw.githubusercontent.com/johan/world.geo.json/master/countries/${
+          props.iso === "JAP" ? "JPN" : props.iso
+        }.geo.json`
       )
         .then((data) => data.json())
         .then((data) => {
@@ -52,11 +54,15 @@ export default function Map(props) {
             </LayersControl.BaseLayer>
           </LayersControl>
           <GeoJSON data={multyPoligon.features} style={purpleOptions}>
-            <Popup>{props.country}</Popup>
+            <Popup>{props.countryLang}</Popup>
           </GeoJSON>
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-          <CircleMarker center={[props.lat, props.long]} radius={8} style={purpleOptionsCircle}  >
-            <Popup>{props.capital}</Popup>
+          <CircleMarker
+            center={[props.lat, props.long]}
+            radius={8}
+            style={purpleOptionsCircle}
+          >
+            <Popup>{props.capitalLang}</Popup>
           </CircleMarker>
           <FullscreenControl position="topleft" />
         </MapContainer>

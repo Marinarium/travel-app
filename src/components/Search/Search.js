@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import CountryService from "../../services/country-service";
 import { UpdateStringForPath } from "../../helpers";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
@@ -9,7 +8,6 @@ import icon_search from "./images/icon-search.svg";
 import icon_clear from "./images/icon-clear.svg";
 
 export default function Search(props) {
-  const [countries, setCountries] = useState([]);
   const [textInput, setTextInput] = useState("");
   const [findElements, setFindElements] = useState([]);
   const [activeElements, setActiveElements] = useState(0);
@@ -31,7 +29,7 @@ export default function Search(props) {
   const historyPush = () => {
     history.push(
       UpdateStringForPath(
-        findElements.length ? findElements[activeElements].country : ""
+        findElements.length ? findElements[activeElements].country_push : ""
       )
     );
     clearInput();
@@ -55,31 +53,29 @@ export default function Search(props) {
   };
 
   useEffect(() => {
-    new CountryService().getAllCountries().then((data) => setCountries(data));
-  }, []);
-
-  useEffect(() => {
     if (!textInput.length) {
       setFindElements([]);
     } else {
       const find = [];
-      countries.map((el) => {
-        return el.country[`country_${"eng"}`]
+      props.countriesInfo.map((el) => {
+        return el.country[`country_${props.language}`]
           .toLowerCase()
           .indexOf(textInput.toLowerCase()) !== -1
           ? find.push({
-              country: el.country[`country_${"eng"}`],
+              country: el.country[`country_${props.language}`],
               id: el._id,
-              capital: el.capital[`capital_${"eng"}`],
+              capital: el.capital[`capital_${props.language}`],
+              country_push: el.country[`country_eng`],
             })
           : "" ||
-            el.capital[`capital_${"eng"}`]
+            el.capital[`capital_${props.language}`]
               .toLowerCase()
               .indexOf(textInput.toLowerCase()) !== -1
           ? find.push({
-              country: el.country[`country_${"eng"}`],
+              country: el.country[`country_${props.language}`],
               id: el._id,
-              capital: el.capital[`capital_${"eng"}`],
+              capital: el.capital[`capital_${props.language}`],
+              country_push: el.country[`country_eng`],
             })
           : "";
       });
@@ -93,7 +89,15 @@ export default function Search(props) {
       <div>
         <form className="search header__search" onLoad={setFocus}>
           <input
-            placeholder="Search"
+            placeholder={
+              props.language === "eng"
+                ? "Search"
+                : props.language === "rus"
+                ? "Поиск"
+                : props.language === "bel"
+                ? "Пошук"
+                : "Search"
+            }
             className="search__input"
             type="text"
             value={textInput}
@@ -127,7 +131,10 @@ export default function Search(props) {
               key={el.id}
               className={activeElements === index ? "activeCoutrySearch" : ""}
             >
-              <Link onClick={clearInput} to={UpdateStringForPath(el.country)}>
+              <Link
+                onClick={clearInput}
+                to={UpdateStringForPath(el.country_push)}
+              >
                 {`${el.country} - ${el.capital}`}
               </Link>
             </li>

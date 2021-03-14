@@ -1,13 +1,23 @@
 import React from "react";
 
-import './LangSelect.scss';
+import "./LangSelect.scss";
 
-export default function LangSelect() {
-    return (
-        <select className="select" size="1">
-            <option value="en">English</option>
-            <option value="ru">Русский</option>
-            <option value="by">Беларуская</option>
-        </select>
-    )
+export default function LangSelect(props) {
+  return (
+    <select
+      className="select"
+      size="1"
+      onChange={(event) => props.onLanguageChange(event.target.value)}
+    >
+      <option value="eng" selected={props.language === "eng" ? true : false}>
+        English
+      </option>
+      <option value="rus" selected={props.language === "rus" ? true : false}>
+        Русский
+      </option>
+      <option value="bel" selected={props.language === "bel" ? true : false}>
+        Беларуская
+      </option>
+    </select>
+  );
 }

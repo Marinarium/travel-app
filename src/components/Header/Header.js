@@ -15,8 +15,15 @@ export default function Header(props) {
           <img src={logo} alt="Logo TravelApp" className="logo__img" />
         </Link>
       </div>
-      <Search page={props.page} />
-      <LangSelect />
+      <Search
+        page={props.page}
+        language={props.language}
+        countriesInfo={props.countriesInfo}
+      />
+      <LangSelect
+        onLanguageChange={props.onLanguageChange}
+        language={props.language}
+      />
     </header>
   );
 }
