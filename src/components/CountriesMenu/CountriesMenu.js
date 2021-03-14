@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import CountryCard from "../CountryCard/CountryCard";
+import { UpdateStringForPath } from "../../helpers";
 
 import "./CountriesMenu.scss";
 
@@ -8,7 +9,7 @@ export default class CountriesMenu extends Component {
   state = {
     country: null,
     capital: null,
-    cover: null,
+    cover: null
   };
 
   render() {
@@ -22,7 +23,7 @@ export default class CountriesMenu extends Component {
             country={country[`country_eng`]}
             countryName={country[`country_${language}`]}
             capital={capital[`capital_${language}`]}
-            cover={cover}
+            cover={`images/${UpdateStringForPath(country.country_eng)}/${cover}`}
             iso={iso}
             onCountryChange={() => onCountryChange(country["country_eng"], iso)}
           />
