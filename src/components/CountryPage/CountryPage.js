@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 
 import FirstScreenOfCountry from "../FirstScreenOfCountry/FirstScreenOfCountry";
 import MainCountryInfo from "../../containers/MainCountryInfo/MainCountryInfo";
@@ -7,14 +7,11 @@ import SightsAndCurrency from "../../containers/SightsAndCurrency/SightsAndCurre
 import Video from "../Video/Video";
 import Map from "../Map/Map";
 import CountryService from "../../services/country-service";
-import {getISObyPath} from "../../helpers";
-
-import "./CountryPage.scss"
+import { getISObyPath } from "../../helpers";
+import "./CountryPage.scss";
 
 export default class CountriesPage extends Component {
-
-    countryService = new CountryService();
-
+  countryService = new CountryService();
     currentISOfromPath = getISObyPath();
 
     state = {
@@ -80,4 +77,5 @@ export default class CountriesPage extends Component {
             </main>
         )
     }
+
 }

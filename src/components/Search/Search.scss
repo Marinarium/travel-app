@@ -1,4 +1,4 @@
-@import '../../assets/styles/main';
+@import "../../assets/styles/main";
 
 .search {
   float: right;
@@ -15,7 +15,8 @@
 }
 
 .search__input,
-.search__button {
+.search__button,
+.clear__button {
   border: none;
   outline: none;
   background: transparent;
@@ -38,7 +39,8 @@
 
 /*--- Animation ---*/
 .search__line {
-  &::before, &::after {
+  &::before,
+  &::after {
     position: absolute;
     bottom: -1px;
     width: 0;
@@ -71,12 +73,13 @@
   transition-duration: 350ms;
 }
 
-.search__button {
+.search__button,
+.clear__button {
   height: 30px;
   width: 42px;
   position: absolute;
   top: 0;
-  right: -8px;
+  right: 10px;
   cursor: pointer;
   padding: 0;
   transition-duration: 350ms;
@@ -86,4 +89,10 @@
     transform: scale(1.2);
   }
 }
+.clear__button {
+  right: -15px;
+}
 
+.search_noVisibility {
+  visibility: hidden;
+}

@@ -1,9 +1,9 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import {UpdateStringForPath} from "../../helpers";
+import { UpdateStringForPath } from "../../helpers";
 
-import "./CountryCard.scss"
+import "./CountryCard.scss";
 
 export default function CountryCard({id, country, capital, cover, onCountryChange, iso, currency_code}) {
 
