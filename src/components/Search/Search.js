@@ -29,7 +29,7 @@ export default function Search(props) {
   const historyPush = () => {
     history.push(
       UpdateStringForPath(
-        findElements.length ? findElements[activeElements].country : ""
+        findElements.length ? findElements[activeElements].country_push : ""
       )
     );
     clearInput();
