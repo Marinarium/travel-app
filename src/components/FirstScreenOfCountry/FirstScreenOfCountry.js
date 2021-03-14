@@ -4,10 +4,11 @@ import "./FirstScreenOfCountry.scss";
 
 import { langTextFirstScreenOfCountry as langText } from "../../services/langComponents";
 
-export default function FirstScreenOfCountry({ countryLang, capitalLang, language, countryEng}) {
+export default function FirstScreenOfCountry({ countryLang, capitalLang, language, country}) {
+
   return (
     <section className="first-screen-country"
-             style={{backgroundImage: `url(images/${countryEng}/cover.jpg)`}}>
+             style={{backgroundImage: `url(images/${document.location.pathname.slice(1)}/cover.jpg)`}}>
       <div className="first-screen-country__box">
         <div className="first-screen-country__content">
           <div className="first-screen-country__frame">
