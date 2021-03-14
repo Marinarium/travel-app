@@ -13,6 +13,7 @@
   @include main-font(normal, 14px);
   color: $dark;
   margin-bottom: 15px;
+  text-transform: capitalize;
 }
 
 .wg-time__clock {

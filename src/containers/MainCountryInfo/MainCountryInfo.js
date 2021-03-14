@@ -10,21 +10,10 @@ import {API_Weather} from "../../services/apiKeys";
 export default function MainCountryInfo({description, capital}) {
 
   const [time, setTime] = useState(new Date());
-  const [weekDay, setWeekDay] = useState();
-  const [numDate, setNumDate] = useState();
-  const [month, setMonth] = useState();
   const [temperature, setTemperature] = useState();
   const [humidity, setHumidity] = useState();
   const [wind, setWind] = useState();
   const [icon, setIcon] = useState();
-
-  useEffect(() => {
-    if (capital) {
-      setWeekDay(() => new Date().getDay());
-      setNumDate(() => new Date().getDate());
-      setMonth(() => new Date().getMonth());
-    }
-  }, [capital]);
 
   useEffect(() => {
     if (capital) {
@@ -53,9 +42,6 @@ export default function MainCountryInfo({description, capital}) {
         <WidgetTime
           capital={capital}
           time={time}
-          weekDay={weekDay}
-          numDate={numDate}
-          month={month}
         />
         <WidgetWeather
           capital={capital}

@@ -9,13 +9,16 @@ export default function WidgetCurrency({currency, currencyCode}) {
     const [byn, setByn] = useState();
 
     useEffect(() => {
-        setUsd((usd) => {return (currency.USD/currency[currencyCode]).toFixed(4)});
-        setEur((eur) => {return (currency.EUR/currency[currencyCode]).toFixed(4)});
-        setByn((byn) => {return (1/currency[currencyCode]).toFixed(4)});
+        setUsd((usd) => {return (currency.USD/currency[currencyCode]).toFixed(3)});
+        setEur((eur) => {return (currency.EUR/currency[currencyCode]).toFixed(3)});
+        setByn((byn) => {return (1/currency[currencyCode]).toFixed(3)});
     }, [currency, currencyCode]);
 
     function sellingConvert(currency) {
-        return (currency * 1.003).toFixed(4)
+        if (currencyCode === 'MAD' || currencyCode === 'JPY' || currencyCode === 'BRL') {
+            return (currency * 1.05).toFixed(3)
+        }
+        else return (currency * 1.003).toFixed(3)
     }
 
     return (
@@ -37,8 +40,8 @@ export default function WidgetCurrency({currency, currencyCode}) {
                     </tr>
                     <tr>
                         <td>EUR</td>
-                        <td>{eur}</td>
-                        <td>{currencyCode === 'EUR' ? eur : sellingConvert(eur)}</td>
+                        <td>{currencyCode === 'EUR' ? '-' : eur}</td>
+                        <td>{currencyCode === 'EUR' ? '-' : sellingConvert(eur)}</td>
                     </tr>
                     <tr>
                         <td>BYN</td>

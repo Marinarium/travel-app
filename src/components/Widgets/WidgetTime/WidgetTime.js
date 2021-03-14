@@ -2,10 +2,7 @@ import React, {useState, useEffect} from "react";
 
 import "./WidgetTime.scss";
 
-const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
-export default function WidgetTime({capital, time, weekDay, numDate, month}) {
+export default function WidgetTime({capital, time}) {
 
   const [continent, setContinent] = useState();
 
@@ -22,8 +19,15 @@ export default function WidgetTime({capital, time, weekDay, numDate, month}) {
   return (
     <section className="wg-time">
       <h3 className="wg-time__title">Time in {capital}</h3>
-      <div className="wg-time__date">{dayNames[weekDay]}, {numDate} {months[month]}</div>
-      <div className="wg-time__clock">{time.toLocaleString('eu-US', {
+      <div className="wg-time__date">
+        {time.toLocaleString('en-us', {
+          timeZone: continent,
+          weekday: 'long',
+          day: 'numeric',
+          month: 'long',
+        })}
+      </div>
+      <div className="wg-time__clock">{time.toLocaleString('en-us', {
         timeZone: continent,
         timeStyle: 'medium',
         hourCycle: 'h24',
