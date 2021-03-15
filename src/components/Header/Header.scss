@@ -18,12 +18,31 @@
   flex-grow: 1;
 }
 
-//.logo__link {
-//  transition-duration: 300ms;
-//  display: inline-block;
-//
-//  &:hover, &:focus {
-//    outline: none;
-//    transform: translateY(-3px);
-//  }
-//}
+.sign-wrapper {
+  position: relative;
+  top: 5px;
+}
+
+.sign {
+  cursor: pointer;
+
+  & img{
+    transition-duration: 350ms;
+  }
+
+  &:hover img,
+  &:focus img{
+    outline: none;
+    transform: translateY(-3px);
+  }
+}
+
+.sign__up {
+  margin-right: 10px;
+}
+
+.header-avatar {
+  border-radius: 50%;
+  position: relative;
+  top: 5px;
+}

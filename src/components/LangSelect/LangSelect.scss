@@ -8,6 +8,9 @@
   background-color: $green;
   color: $light;
   border: 1px solid $second-green;
+  margin-right: 40px;
+  position: relative;
+  top: 5px;
 
   &:focus {
     outline: none;

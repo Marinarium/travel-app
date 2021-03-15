@@ -85,8 +85,8 @@ export default function Search(props) {
   }, [textInput]);
 
   return (
-    <div className={props.page === "country" ? "search_noVisibility" : ""}>
-      <div>
+    <div className={props.page === "country" ? "search_noVisibility" : "search_visible"}>
+      <div className="search-wrap">
         <form className="search header__search" onLoad={setFocus}>
           <input
             placeholder={
@@ -124,8 +124,8 @@ export default function Search(props) {
           </div>
         </form>
       </div>
-      <div>
-        <ul>
+      <div className="search__result">
+        <ul className="search__list">
           {findElements.map((el, index) => (
             <li
               key={el.id}

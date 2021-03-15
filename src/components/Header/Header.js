@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "./images/logo.svg";
@@ -6,6 +5,8 @@ import Search from "../Search/Search";
 import LangSelect from "../LangSelect/LangSelect";
 import "./Header.scss";
 import { getAvatar } from "../../services/user-services";
+import signIn from "./images/sign-in.svg";
+import signUp from "./images/sign up.svg";
 
 export default function Header(props) {
   const [isLogin, setLogin] = useState(false);
@@ -37,17 +38,17 @@ export default function Header(props) {
 const setProfile = (avatar) => {
   return (
     <Link to='/profile'>
-      <img src={avatar} width='40' height='40' />
-      Profile
+      <img src={avatar} width='35' height='35' alt='profile' className='header-avatar'/>
     </Link>
   );
 };
 
 const setSigns = () => {
   return (
-    <div className='sign-wrapper'>
-      <Link to='/sign-in'>Sign in</Link> /<Link to='/sign-up'>Sign Up</Link>
-    </div>
+      <div className='sign-wrapper'>
+          <Link to='/sign-up' className="sign sign__up"><img src={signUp} alt="Sign up" width="25"/></Link>
+          <Link to='/sign-in' className="sign sign__in"><img src={signIn} alt="Sign in" width="25"/></Link>
+      </div>
   );
 };
 
