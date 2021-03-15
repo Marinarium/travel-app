@@ -16,10 +16,10 @@ export default class CountriesMenu extends Component {
     const { onCountryChange, countriesInfo, language } = this.props;
 
     const allCards = countriesInfo.map(
-      ({ id, country, capital, cover, iso }) => {
+      ({ country, capital, cover, iso }) => {
         return (
           <CountryCard
-            key={id}
+            key={iso}
             country={country[`country_eng`]}
             countryName={country[`country_${language}`]}
             capital={capital[`capital_${language}`]}
