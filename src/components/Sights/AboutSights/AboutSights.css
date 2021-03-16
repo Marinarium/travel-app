@@ -1,0 +1,100 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*--- Colors ---*/
+/*--- Others ---*/
+.about-sights {
+  margin-right: 80px;
+  padding-left: 50px;
+}
+@media (max-width: 900px) {
+  .about-sights {
+    margin-right: 0;
+    padding-left: 0;
+    margin-bottom: 40px;
+  }
+}
+
+.about-sights__item {
+  display: none;
+}
+.about-sights__item.active {
+  display: block;
+}
+
+.about-sights__title {
+  font-family: "Nunito", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 125%;
+  letter-spacing: 0.065em;
+  text-transform: capitalize;
+  color: #5bbb76;
+  margin-bottom: 20px;
+}
+
+.about-sights__p {
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 177%;
+  letter-spacing: 0.065em;
+  color: #262626;
+  line-height: 170%;
+  margin-bottom: 25px;
+}
+
+/*# sourceMappingURL=AboutSights.css.map */

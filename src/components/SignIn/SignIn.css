@@ -1,0 +1,184 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*--- Colors ---*/
+/*--- Others ---*/
+.form {
+  margin-top: 50px;
+  margin-bottom: 90px;
+  padding: 0 5%;
+}
+@media (min-width: 1600px) {
+  .form {
+    padding-left: 12%;
+    padding-right: 12%;
+  }
+}
+
+.form__title {
+  font-family: "Nunito", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 125%;
+  letter-spacing: 0.065em;
+  color: #262626;
+  margin-bottom: 40px;
+}
+.form__title .accent {
+  color: #5bbb76;
+}
+
+.form__field {
+  position: relative;
+  width: 350px;
+  border-bottom: 1px solid #262626;
+  margin-bottom: 40px;
+}
+@media (max-width: 480px) {
+  .form__field {
+    width: auto;
+  }
+}
+.form__field_without-line {
+  border: none;
+}
+
+.form__label {
+  font-family: "Nunito", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 125%;
+  letter-spacing: 0.065em;
+  text-transform: capitalize;
+  color: #262626;
+  margin-bottom: 10px;
+  display: block;
+}
+.form__label .accent {
+  color: #5bbb76;
+}
+
+.form__input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  height: 30px;
+  font-family: "Nunito", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 125%;
+  color: #262626;
+  line-height: 125%;
+}
+
+/*--- Animation ---*/
+.form__line::before, .form__line::after {
+  position: absolute;
+  bottom: -1px;
+  width: 0;
+  height: 2px;
+  content: "";
+  transition-duration: 350ms;
+  transition-property: width;
+}
+.form__line::before {
+  left: 50%;
+}
+.form__line::after {
+  right: 50%;
+}
+
+.form__input:hover ~ .form__line::before,
+.form__input:hover ~ .form__line::after {
+  background-color: #5bbb76;
+  width: 50%;
+  transition-duration: 350ms;
+}
+
+.form__input:focus ~ .form__line::before,
+.form__input:focus ~ .form__line::after {
+  background-color: #21A683;
+  width: 50%;
+  transition-duration: 350ms;
+}
+
+.form__btn {
+  font-family: "Nunito", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: 0.065em;
+  color: #5bbb76;
+  padding: 5px 8px;
+  background-color: transparent;
+  box-shadow: 0 2px 2px rgba(38, 38, 38, 0.24);
+  border-radius: 5px;
+  border: 2px solid #5bbb76;
+  cursor: pointer;
+  transition-duration: 350ms;
+  min-width: 150px;
+}
+.form__btn:hover, .form__btn:focus {
+  outline: none;
+  color: #fbfbfb;
+  background-color: #5bbb76;
+  box-shadow: 0 4px 4px rgba(38, 38, 38, 0.24);
+}
+
+/*# sourceMappingURL=SignIn.css.map */
