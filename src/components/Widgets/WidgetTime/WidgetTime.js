@@ -5,7 +5,7 @@ import "./WidgetTime.scss";
 import {langTextWidgetTime as langText} from "../../../services/langComponents";
 import Loader from "../../Loader/Loader";
 
-export default function WidgetTime({capital, time, language, capitalLang, isLoading}) {
+export default function WidgetTime({capital, time, language, capitalLang}) {
   const [continent, setContinent] = useState();
   const nowTime = time.toLocaleString("en-us", {
     timeZone: continent,
@@ -32,7 +32,7 @@ export default function WidgetTime({capital, time, language, capitalLang, isLoad
   return (
     <section className="wg-time">
       {
-        isLoading
+        !time
           ? <Loader/>
           : <>
             <h3 className="wg-time__title">

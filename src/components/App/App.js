@@ -21,7 +21,7 @@ export default class App extends Component {
     currentISO: "",
     language: localStorage.getItem("language") || "eng",
     countriesInfo: [],
-    gettingData: true,
+    //gettingData: true,
   };
 
   componentDidMount() {
@@ -29,7 +29,7 @@ export default class App extends Component {
       .getAllCountries()
       .then((data) => this.setState({
         countriesInfo: data,
-        gettingData: false,
+        //gettingData: false,
       }))
       .then((data) =>
         console.log(
@@ -114,7 +114,7 @@ export default class App extends Component {
                 .map((el) =>
                   el.country.country_eng.toLowerCase().split(" ").join("-")
                 )
-                .indexOf(window.location.pathname.slice(1)) != -1 ? (
+                .indexOf(window.location.pathname.slice(1)) !== -1 ? (
                 <Route
                   path="/:country"
                   render={({ match }) => {
@@ -125,7 +125,7 @@ export default class App extends Component {
                         countriesInfo={this.state.countriesInfo}
                         country={country}
                         iso={this.state.currentISO}
-                        gettingData={this.state.gettingData}
+                        //gettingData={this.state.gettingData}
                       />
                     );
                   }}

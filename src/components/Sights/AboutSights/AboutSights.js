@@ -8,7 +8,7 @@ export default function AboutSights({ sights, language, gettingData }) {
 
   const [allSights, setAllSights] = useState([]);
 
-  if (gettingData) {
+  if (!sights) {
     return (
       <Loader />
     )
