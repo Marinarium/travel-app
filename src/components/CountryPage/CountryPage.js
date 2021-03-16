@@ -105,7 +105,10 @@ export default class CountriesPage extends Component {
           sights={sights}
           language={this.props.language}
         />
-        <Video language={this.props.language} />
+        <Video
+            language={this.props.language}
+            countryEng={countryEng}
+        />
         <Map
           coordinates={coordinates}
           lat={lat}
