@@ -3,6 +3,12 @@
 .about-country {
   margin-right: 80px;
   padding-left: 50px;
+
+  @media (max-width: 900px) {
+    margin-right: 0;
+    padding-left: 0;
+    margin-bottom: 40px;
+  }
 }
 
 .about-country__title {

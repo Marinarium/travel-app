@@ -43,7 +43,7 @@ export default function Header(props) {
 }
 const setProfile = (avatar) => {
   return (
-    <Link to="/profile">
+    <Link to="/profile" className="header-profile">
       <img
         src={avatar}
         width="35"
