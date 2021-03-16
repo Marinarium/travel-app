@@ -79,7 +79,6 @@ export default class CountriesPage extends Component {
 
     return (
       <main className="main">
-        {console.log(this.state.gettingData)}
         <FirstScreenOfCountry
           countryEng={countryEng}
           country={country}
@@ -109,6 +108,7 @@ export default class CountriesPage extends Component {
           currencyCode={currencyCode}
           sights={sights}
           language={this.props.language}
+          gettingData={this.state.gettingData}
         />
         <Video language={this.props.language} />
         <Map

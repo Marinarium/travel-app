@@ -5,7 +5,7 @@ import WidgetCurrency from "../../components/Widgets/WidgetCurrency/WidgetCurren
 import "./SightsAndCurrency.scss";
 import { API_Currency } from "../../services/apiKeys";
 
-export default function SightsAndCurrency({iso, currencyCode, language, sights}) {
+export default function SightsAndCurrency({iso, currencyCode, language, sights, gettingData}) {
   const [currency, setCurrency] = useState([]);
   const [isLoading, setLoading] = useState(true);
 
@@ -24,6 +24,7 @@ export default function SightsAndCurrency({iso, currencyCode, language, sights})
         sights={sights}
         language={language}
         isLoading={isLoading}
+        gettingData={gettingData}
       />
       <aside className="widgets">
         <WidgetCurrency
