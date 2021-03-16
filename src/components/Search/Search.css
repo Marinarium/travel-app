@@ -1,0 +1,223 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*--- Colors ---*/
+/*--- Others ---*/
+.search {
+  float: right;
+  display: inline-block;
+  position: relative;
+  width: 235px;
+  border-bottom: 1px solid #fbfbfb;
+  align-self: flex-start;
+  bottom: -2px;
+}
+@media (max-width: 480px) {
+  .search {
+    width: auto;
+  }
+}
+
+.header__search {
+  margin-right: 40px;
+}
+@media (max-width: 900px) {
+  .header__search {
+    margin-right: 0;
+  }
+}
+
+.search__input,
+.search__button,
+.clear__button {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.search__input {
+  width: 100%;
+  height: 30px;
+  font-family: "Nunito", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 125%;
+  color: #fbfbfb;
+  line-height: 125%;
+}
+
+.search__input::placeholder {
+  font-family: "Nunito", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 125%;
+  color: #fbfbfb;
+  line-height: 125%;
+}
+
+/*--- Animation ---*/
+.search__line::before, .search__line::after {
+  position: absolute;
+  bottom: -1px;
+  width: 0;
+  height: 2px;
+  content: "";
+  transition-duration: 350ms;
+  transition-property: width;
+}
+.search__line::before {
+  left: 50%;
+}
+.search__line::after {
+  right: 50%;
+}
+
+.search__input:hover ~ .search__line::before,
+.search__input:hover ~ .search__line::after {
+  background-color: #5bbb76;
+  width: 50%;
+  transition-duration: 350ms;
+}
+
+.search__input:focus ~ .search__line::before,
+.search__input:focus ~ .search__line::after {
+  background-color: #5bbb76;
+  width: 50%;
+  transition-duration: 350ms;
+}
+
+.search__button,
+.clear__button {
+  height: 30px;
+  width: 42px;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  cursor: pointer;
+  padding: 0;
+  transition-duration: 350ms;
+}
+.search__button:hover, .search__button:focus,
+.clear__button:hover,
+.clear__button:focus {
+  transform: scale(1.2);
+}
+
+.clear__button {
+  right: -15px;
+}
+
+.search_noVisibility {
+  visibility: hidden;
+  display: none;
+}
+
+/*----- Styles for Results ---*/
+.search_visible {
+  position: relative;
+}
+@media (max-width: 900px) {
+  .search_visible {
+    order: 3;
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+
+.search__result {
+  position: absolute;
+  background-color: #262626;
+  color: #fbfbfb;
+  top: 37px;
+  left: -15px;
+  border-radius: 5px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  min-width: 260px;
+  box-sizing: border-box;
+}
+.search__result li {
+  margin-bottom: 10px;
+  padding: 0 15px;
+}
+.search__result li:first-child {
+  padding-top: 20px;
+}
+.search__result li:last-child {
+  margin-bottom: 0;
+  padding-bottom: 30px;
+}
+.search__result li.activeCoutrySearch {
+  color: #5bbb76;
+}
+.search__result a {
+  color: inherit;
+  text-decoration: none;
+  font-family: "Nunito", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 125%;
+  letter-spacing: 0.025em;
+  text-transform: capitalize;
+  transition-duration: 350ms;
+}
+.search__result a:hover, .search__result a:focus {
+  outline: none;
+  color: #5bbb76;
+}
+
+/*# sourceMappingURL=Search.css.map */

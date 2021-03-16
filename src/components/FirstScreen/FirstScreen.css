@@ -1,0 +1,171 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*--- Colors ---*/
+/*--- Others ---*/
+.first-screen {
+  min-height: 450px;
+  height: calc(100vh - 77px);
+  background-image: url("./images/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 65px 5% 106px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 50px;
+}
+@media (min-width: 1600px) {
+  .first-screen {
+    padding-left: 12%;
+    padding-right: 12%;
+  }
+}
+
+.first-screen__box {
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 900px) {
+  .first-screen__box {
+    width: 90%;
+  }
+}
+@media (max-width: 480px) {
+  .first-screen__box {
+    width: 100%;
+  }
+}
+.first-screen__box:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -12px;
+  top: -12px;
+  width: 247px;
+  min-height: 300px;
+  background: #5bbb76;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+  z-index: -1;
+}
+
+.first-screen__content {
+  width: 680px;
+  min-height: 279px;
+  background: rgba(38, 38, 38, 0.9);
+  border-radius: 2px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding-top: 99px;
+}
+@media (max-width: 900px) {
+  .first-screen__content {
+    width: auto;
+    padding: 50px 20px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+}
+
+.main-title {
+  font-family: "Nunito", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 125%;
+  line-height: 125%;
+  letter-spacing: 0.065em;
+  text-transform: capitalize;
+  color: #5bbb76;
+  position: relative;
+  margin-bottom: 25px;
+}
+.main-title .accent {
+  display: inline-block;
+  color: #fbfbfb;
+}
+.main-title:before {
+  content: url("./images/arrow.svg");
+  display: block;
+  width: 410px;
+  height: 41px;
+  position: absolute;
+  top: -60px;
+}
+@media (max-width: 900px) {
+  .main-title:before {
+    display: none;
+  }
+}
+
+.first-screen__moto {
+  font-family: "Nunito", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 125%;
+  line-height: 125%;
+  letter-spacing: 0.01em;
+  color: #fbfbfb;
+}
+
+/*# sourceMappingURL=FirstScreen.css.map */

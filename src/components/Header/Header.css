@@ -1,0 +1,152 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*--- Colors ---*/
+/*--- Others ---*/
+.header {
+  background-color: #262626;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 15px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+@media (min-width: 1600px) {
+  .header {
+    padding-left: 12%;
+    padding-right: 12%;
+  }
+}
+@media (max-width: 900px) {
+  .header {
+    flex-wrap: wrap;
+    padding: 20px 5%;
+  }
+}
+
+.header__logo {
+  flex-grow: 1;
+}
+@media (max-width: 900px) {
+  .header__logo {
+    order: 1;
+    margin-bottom: 10px;
+    flex-basis: 50%;
+  }
+}
+
+@media (max-width: 900px) {
+  .logo__img {
+    width: 200px;
+  }
+}
+
+.sign-wrapper {
+  position: relative;
+  top: 5px;
+}
+@media (max-width: 900px) {
+  .sign-wrapper {
+    order: 2;
+    margin-bottom: 10px;
+    flex-basis: 50%;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+@media (max-width: 480px) {
+  .sign-wrapper {
+    flex-basis: inherit;
+  }
+}
+
+.sign {
+  cursor: pointer;
+}
+.sign img {
+  transition-duration: 350ms;
+}
+.sign:hover img, .sign:focus img {
+  outline: none;
+  transform: translateY(-3px);
+}
+
+.sign__up {
+  margin-right: 10px;
+}
+
+@media (max-width: 900px) {
+  .header-profile {
+    order: 2;
+    margin-bottom: 10px;
+    flex-basis: 50%;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+@media (max-width: 480px) {
+  .header-profile {
+    flex-basis: inherit;
+  }
+}
+
+.header-avatar {
+  border-radius: 50%;
+  position: relative;
+  top: 5px;
+}
+
+/*# sourceMappingURL=Header.css.map */
