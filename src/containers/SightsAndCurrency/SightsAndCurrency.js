@@ -18,7 +18,9 @@ export default function SightsAndCurrency({ iso, currencyCode, language, sights 
 
   return (
     <div className="sights-and-currency">
-      <AboutSights sights={sights}/>
+      <AboutSights
+        sights={sights}
+      />
       <aside className="widgets">
         <WidgetCurrency
           iso={iso}

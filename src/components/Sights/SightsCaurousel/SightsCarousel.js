@@ -5,18 +5,17 @@ import "./SightsCarousel.scss"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import leftArrow from "./images/arrow-left.svg"
-import rightArrow from "./images/arrow-right.svg"
 import CarouselItem from "../CarouselItem/CarouselItem";
 import {UpdateStringForPath} from "../../../helpers";
 
 
 function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
+  const {className, style, onClick} = props;
   return (
     <div
       className={className}
-      style={{ ...style,
+      style={{
+        ...style,
         display: "block",
         backgroundColor: "rgba(38, 38, 38, 0.6)",
         transform: "scale(1.7)",
@@ -31,11 +30,12 @@ function SampleNextArrow(props) {
 }
 
 function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
+  const {className, style, onClick} = props;
   return (
     <div
       className={className}
-      style={{ ...style,
+      style={{
+        ...style,
         display: "block",
         backgroundColor: "rgba(38, 38, 38, 0.6)",
         transform: "scale(1.7)",
@@ -49,16 +49,17 @@ function SamplePrevArrow(props) {
   );
 }
 
-export default function SightsCarousel({sights, countryEng}) {
-
+export default function SightsCarousel({sights, countryEng, slide}) {
   const allSightsImages = sights.map(
     (item, i) => {
       return (
         <CarouselItem
           key={i}
-          img={`images/${UpdateStringForPath(countryEng)}/${item.img}`}
+          /* img={`images/${UpdateStringForPath(countryEng)}/${item.img}`} */
+          img={UpdateStringForPath(slide)}
           title={item.name_eng}
           country={countryEng}
+          slide={slide}
         />
       );
     }
@@ -71,15 +72,15 @@ export default function SightsCarousel({sights, countryEng}) {
     centerPadding: "60px",
     slidesToShow: 3,
     speed: 500,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />
+    nextArrow: <SampleNextArrow/>,
+    prevArrow: <SamplePrevArrow/>
   };
 
   return (
     <section className="carousel">
-        <Slider {...settings}>
-          {allSightsImages}
-        </Slider>
+      <Slider {...settings}>
+        {allSightsImages}
+      </Slider>
     </section>
   )
 }

@@ -27,6 +27,7 @@ export default class CountriesPage extends Component {
     currencyCode: null,
     sights: [],
     iso: null,
+    slide: null,
   };
 
   constructor() {
@@ -50,6 +51,7 @@ export default class CountriesPage extends Component {
         currencyCode: country[0].currency_code,
         sights: country[0].sights,
         iso: country[0].iso,
+        slide: country[0].sights[0].img,
       });
     });
   }
@@ -72,6 +74,7 @@ export default class CountriesPage extends Component {
       currencyCode,
       sights,
       iso,
+      slide,
     } = this.state;
 
 
@@ -96,6 +99,7 @@ export default class CountriesPage extends Component {
             countryEng={countryEng}
             sights={sights}
             language={this.props.language}
+            slide={slide}
         />
         <SightsAndCurrency
           iso={iso}

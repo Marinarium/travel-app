@@ -37,7 +37,6 @@ export default function Search(props) {
   };
 
   const onKeyDown = (e) => {
-    console.log(e);
     if (e.key === "Enter") {
       e.preventDefault();
       historyPush();
@@ -82,7 +81,7 @@ export default function Search(props) {
       setFindElements(find);
     }
     setActiveElements(0);
-  }, [textInput]);
+  }, [textInput, props.countriesInfo, props.language]);
 
   return (
     <div className={props.page === "country" ? "search_noVisibility" : ""}>
