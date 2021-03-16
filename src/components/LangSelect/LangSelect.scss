@@ -12,6 +12,11 @@
   position: relative;
   top: 5px;
 
+  @media (max-width: 900px) {
+    order: 4;
+    margin-right: 0;
+  }
+
   &:focus {
     outline: none;
   }

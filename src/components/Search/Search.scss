@@ -8,10 +8,18 @@
   border-bottom: 1px solid $light;
   align-self: flex-start;
   bottom: -2px;
+
+  @media (max-width: 480px) {
+    width: auto;
+  }
 }
 
 .header__search {
   margin-right: 40px;
+
+  @media (max-width: 900px) {
+    margin-right: 0;
+  }
 }
 
 .search__input,
@@ -89,18 +97,27 @@
     transform: scale(1.2);
   }
 }
+
 .clear__button {
   right: -15px;
 }
 
 .search_noVisibility {
   visibility: hidden;
+  display: none;
 }
 
 
 /*----- Styles for Results ---*/
 .search_visible {
   position: relative;
+
+  @media (max-width: 900px) {
+    order: 3;
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-start;
+  }
 }
 
 .search__result {

@@ -24,6 +24,14 @@
   position: relative;
   z-index: 1;
 
+  @media (max-width: 900px) {
+    width: 90%;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+  }
+
   &:before {
     content: '';
     display: block;
@@ -52,6 +60,13 @@
   align-items: center;
   box-sizing: border-box;
   padding-top: 99px;
+
+  @media (max-width: 900px) {
+    width: auto;
+    padding: 50px 20px;
+    align-items: flex-start;
+    justify-content: center;
+  }
 }
 
 .main-title {
@@ -75,6 +90,10 @@
     height: 41px;
     position: absolute;
     top: -60px;
+
+    @media (max-width: 900px) {
+      display: none;
+    }
   }
 }
 

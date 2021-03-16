@@ -7,20 +7,51 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 2;
 
   @media (min-width: 1600px) {
     padding-left: 12%;
     padding-right: 12%;
   }
+  
+  @media (max-width: 900px) {
+    flex-wrap: wrap;
+    padding: 20px 5%;
+  }
 }
 
 .header__logo {
   flex-grow: 1;
+
+  @media (max-width: 900px) {
+    order: 1;
+    margin-bottom: 10px;
+    flex-basis: 50%;
+  }
+}
+
+.logo__img {
+  @media (max-width: 900px) {
+    width: 200px;
+  }
 }
 
 .sign-wrapper {
   position: relative;
   top: 5px;
+
+  @media (max-width: 900px) {
+    order: 2;
+    margin-bottom: 10px;
+    flex-basis: 50%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  @media (max-width: 480px) {
+    flex-basis: inherit;
+  }
 }
 
 .sign {
@@ -39,6 +70,20 @@
 
 .sign__up {
   margin-right: 10px;
+}
+
+.header-profile {
+  @media (max-width: 900px) {
+    order: 2;
+    margin-bottom: 10px;
+    flex-basis: 50%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  @media (max-width: 480px) {
+    flex-basis: inherit;
+  }
 }
 
 .header-avatar {

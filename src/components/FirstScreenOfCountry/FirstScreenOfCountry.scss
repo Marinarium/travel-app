@@ -24,6 +24,14 @@
   position: relative;
   z-index: 1;
 
+  @media (max-width: 900px) {
+    width: 90%;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+  }
+
   &:before {
     content: '';
     display: block;
@@ -53,6 +61,13 @@
   display: block;
   padding-top: 56px;
   padding-left: 50px;
+
+  @media (max-width: 900px) {
+    width: auto;
+    padding: 50px 20px;
+    align-items: flex-start;
+    justify-content: center;
+  }
 }
 
 .first-screen-country__frame {
