@@ -90,3 +90,199 @@ export const langTextVideo = {
   },
   secondH3: { eng: "at It", bel: "на гэта!", rus: "на это!" },
 };
+
+export const langTextSignIn = {
+  title: {
+    eng: (
+      <h2 className="form__title">
+        <span className="accent">Sign</span> in
+      </h2>
+    ),
+    bel: (
+      <h2 className="form__title">
+        <span className="accent">Увай</span>сці
+      </h2>
+    ),
+    rus: (
+      <h2 className="form__title">
+        <span className="accent">Вой</span>ти
+      </h2>
+    ),
+  },
+  login: {
+    eng: (
+      <label className="login-text form__label" htmlFor="login">
+        L<span className="accent">o</span>gin
+      </label>
+    ),
+    bel: (
+      <label className="login-text form__label" htmlFor="login">
+        Л<span className="accent">а</span>гін
+      </label>
+    ),
+    rus: (
+      <label className="login-text form__label" htmlFor="login">
+        Л<span className="accent">о</span>гин
+      </label>
+    ),
+  },
+  password: {
+    eng: (
+      <label className="password-text form__label" htmlFor="password">
+        Passw<span className="accent">o</span>rd
+      </label>
+    ),
+    bel: (
+      <label className="password-text form__label" htmlFor="password">
+        Пар<span className="accent">o</span>ль
+      </label>
+    ),
+    rus: (
+      <label className="password-text form__label" htmlFor="password">
+        Пар<span className="accent">o</span>ль
+      </label>
+    ),
+  },
+  send: {
+    eng: "Send",
+    bel: "Адправіць",
+    rus: "Отправить ",
+  },
+};
+export const langTextSignUp = {
+  title: {
+    eng: (
+      <h2 className="form__title">
+        <span className="accent">Sign</span> up
+      </h2>
+    ),
+    bel: (
+      <h2 className="form__title">
+        <span className="accent">Зарэг</span>істра
+        <span className="accent">вацца</span>
+      </h2>
+    ),
+    rus: (
+      <h2 className="form__title">
+        <span className="accent">Зарег</span>истри
+        <span className="accent">роваться</span>
+      </h2>
+    ),
+  },
+  login: {
+    eng: (
+      <label className="login-text form__label" htmlFor="login">
+        L<span className="accent">o</span>gin
+      </label>
+    ),
+    bel: (
+      <label className="login-text form__label" htmlFor="login">
+        Л<span className="accent">а</span>гін
+      </label>
+    ),
+    rus: (
+      <label className="login-text form__label" htmlFor="login">
+        Л<span className="accent">о</span>гин
+      </label>
+    ),
+  },
+  password: {
+    eng: (
+      <label className="password-text form__label" htmlFor="password">
+        Passw<span className="accent">o</span>rd
+      </label>
+    ),
+    bel: (
+      <label className="password-text form__label" htmlFor="password">
+        Пар<span className="accent">o</span>ль
+      </label>
+    ),
+    rus: (
+      <label className="password-text form__label" htmlFor="password">
+        Пар<span className="accent">o</span>ль
+      </label>
+    ),
+  },
+  name: {
+    eng: (
+      <label className="name-text form__label" htmlFor="name">
+        N<span className="accent">a</span>me
+      </label>
+    ),
+    bel: (
+      <label className="name-text form__label" htmlFor="name">
+        І<span className="accent">м</span>я
+      </label>
+    ),
+    rus: (
+      <label className="name-text form__label" htmlFor="name">
+        И<span className="accent">м</span>я
+      </label>
+    ),
+  },
+  avatar: {
+    eng: (
+      <label className="avatar-text form__label" htmlFor="avatar">
+        Av<span className="accent">a</span>tar
+      </label>
+    ),
+    bel: (
+      <label className="avatar-text form__label" htmlFor="avatar">
+        Ав<span className="accent">а</span>т<span className="accent">а</span>рка
+      </label>
+    ),
+    rus: (
+      <label className="avatar-text form__label" htmlFor="avatar">
+        Ав<span className="accent">а</span>т<span className="accent">а</span>р
+      </label>
+    ),
+  },
+  send: {
+    eng: "Send",
+    bel: "Адправіць",
+    rus: "Отправить ",
+  },
+};
+
+
+
+export const langTextProfile = {
+	title: {
+			eng: (
+					<h2 className="profile__title">
+							<span className="accent">Profile</span> Settings
+					</h2>
+			),
+			bel: (
+					<h2 className="profile__title">
+							<span className="accent">Налады</span> профілю
+					</h2>
+			),
+			rus: (
+					<h2 className="profile__title">
+							<span className="accent">Настройки</span> профиля
+					</h2>
+			),
+	},
+	changeAvatar: {
+			eng: "Change avatar",
+			bel: "Змяніць аватарку",
+			rus: "Сменить аватар",
+	},
+	info: {
+			eng: "Please, reload this page to see your new avatar",
+			bel: "Перазагрузіце старонку, каб убачыць новую аватарку",
+			rus:
+					"Пожалуйста, перезагрузите эту страницу, чтобы увидеть свой новый аватар",
+	},
+	name: {
+			eng: "Name:",
+			bel: "Імя: ",
+			rus: "Имя: ",
+	},
+	log: {
+			eng: "Log Out",
+			bel: "Выйсці",
+			rus: "Выйти",
+	},
+};

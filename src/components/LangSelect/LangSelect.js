@@ -8,16 +8,11 @@ export default function LangSelect(props) {
       className="select"
       size="1"
       onChange={(event) => props.onLanguageChange(event.target.value)}
+      defaultValue={props.language}
     >
-      <option value="eng" selected={props.language === "eng" ? true : false}>
-        English
-      </option>
-      <option value="rus" selected={props.language === "rus" ? true : false}>
-        Русский
-      </option>
-      <option value="bel" selected={props.language === "bel" ? true : false}>
-        Беларуская
-      </option>
+      <option value="eng">English</option>
+      <option value="rus">Русский</option>
+      <option value="bel">Беларуская</option>
     </select>
   );
 }
