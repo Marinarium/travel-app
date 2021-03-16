@@ -22,8 +22,9 @@ export default function Search(props) {
     document.querySelector(".search__input").focus();
   };
 
-  const clearInput = () => {
+  const clearInput = (counrty, iso) => {
     setTextInput("");
+    props.onCountryChange(counrty, iso);
   };
 
   const historyPush = () => {
@@ -34,6 +35,13 @@ export default function Search(props) {
     );
     clearInput();
     setActiveElements(0);
+    setTimeout(() => {
+      history.push(
+        UpdateStringForPath(
+          findElements.length ? findElements[activeElements].country_push : ""
+        )
+      );
+    }, 10);
   };
 
   const onKeyDown = (e) => {
@@ -62,6 +70,7 @@ export default function Search(props) {
           .indexOf(textInput.toLowerCase()) !== -1
           ? find.push({
               country: el.country[`country_${props.language}`],
+              iso: el.iso,
               id: el._id,
               capital: el.capital[`capital_${props.language}`],
               country_push: el.country[`country_eng`],
@@ -72,6 +81,7 @@ export default function Search(props) {
               .indexOf(textInput.toLowerCase()) !== -1
           ? find.push({
               country: el.country[`country_${props.language}`],
+              iso: el.iso,
               id: el._id,
               capital: el.capital[`capital_${props.language}`],
               country_push: el.country[`country_eng`],
@@ -84,7 +94,11 @@ export default function Search(props) {
   }, [textInput]);
 
   return (
-    <div className={props.page === "country" ? "search_noVisibility" : "search_visible"}>
+    <div
+      className={
+        props.page === "country" ? "search_noVisibility" : "search_visible"
+      }
+    >
       <div className="search-wrap">
         <form className="search header__search" onLoad={setFocus}>
           <input
@@ -131,8 +145,8 @@ export default function Search(props) {
               className={activeElements === index ? "activeCoutrySearch" : ""}
             >
               <Link
-                onClick={clearInput}
-                to={UpdateStringForPath(el.country_push)}
+                onClick={() => clearInput()}
+                to={UpdateStringForPath(el.country_push, el.iso)}
               >
                 {`${el.country} - ${el.capital}`}
               </Link>
