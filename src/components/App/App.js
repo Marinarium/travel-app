@@ -15,7 +15,7 @@ import FirstScreen from "../FirstScreen/FirstScreen";
 import CountriesMenu from "../CountriesMenu/CountriesMenu";
 import CountryPage from "../CountryPage/CountryPage";
 import NotFound from "../NotFound/NotFound";
-
+import ScrollToTop from "../ScrollToTop";
 import SignIn from "../SignIn/SignIn";
 import SignUp from "../SignUp/SignUp";
 import "./App.scss";
@@ -56,6 +56,7 @@ export default class App extends Component {
   render() {
     return (
       <Router>
+        <ScrollToTop />
         <div className="main-wrapper">
           <Switch>
             <Route path="/" exact>
