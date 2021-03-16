@@ -37,7 +37,6 @@ export default function Search(props) {
   };
 
   const onKeyDown = (e) => {
-    console.log(e);
     if (e.key === "Enter") {
       e.preventDefault();
       historyPush();
