@@ -14,41 +14,56 @@ export default function Header(props) {
   useEffect(() => {
     if (localStorage.getItem("Token")) {
       setLogin(true);
-       getAvatar(setAvatar);
+      getAvatar(setAvatar);
     } else {
       setLogin(false);
     }
   }, []);
   return (
-    <header className='header'>
-      <div className='logo header__logo'>
-        <Link to='/' className='logo__link'>
-          <img src={logo} alt='Logo TravelApp' className='logo__img' />
+    <header className="header">
+      <div className="logo header__logo">
+        <Link to="/" className="logo__link">
+          <img src={logo} alt="Logo TravelApp" className="logo__img" />
         </Link>
       </div>
-      <Search page={props.page}
+      <Search
+        page={props.page}
         language={props.language}
-        countriesInfo={props.countriesInfo}/>
-      <LangSelect onLanguageChange={props.onLanguageChange}
-        language={props.language}/>
+        countriesInfo={props.countriesInfo}
+        onCountryChange={props.onCountryChange}
+      />
+
+      <LangSelect
+        onLanguageChange={props.onLanguageChange}
+        language={props.language}
+      />
       {isLogin ? setProfile(avatar) : setSigns()}
     </header>
   );
 }
 const setProfile = (avatar) => {
   return (
-    <Link to='/profile'>
-      <img src={avatar} width='35' height='35' alt='profile' className='header-avatar'/>
+    <Link to="/profile">
+      <img
+        src={avatar}
+        width="35"
+        height="35"
+        alt="profile"
+        className="header-avatar"
+      />
     </Link>
   );
 };
 
 const setSigns = () => {
   return (
-      <div className='sign-wrapper'>
-          <Link to='/sign-up' className="sign sign__up"><img src={signUp} alt="Sign up" width="25"/></Link>
-          <Link to='/sign-in' className="sign sign__in"><img src={signIn} alt="Sign in" width="25"/></Link>
-      </div>
+    <div className="sign-wrapper">
+      <Link to="/sign-up" className="sign sign__up">
+        <img src={signUp} alt="Sign up" width="25" />
+      </Link>
+      <Link to="/sign-in" className="sign sign__in">
+        <img src={signIn} alt="Sign in" width="25" />
+      </Link>
+    </div>
   );
 };
-

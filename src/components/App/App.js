@@ -1,6 +1,12 @@
 import React, { Component } from "react";
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  useHistory,
+} from "react-router-dom";
+
 import CountryService from "../../services/country-service";
 
 import Header from "../Header/Header";
@@ -21,19 +27,18 @@ export default class App extends Component {
     currentISO: "",
     language: localStorage.getItem("language") || "eng",
     countriesInfo: [],
+    countryName: [],
   };
 
   componentDidMount() {
-    new CountryService()
-      .getAllCountries()
-      .then((data) => this.setState({ countriesInfo: data }))
-      .then((data) =>
-        console.log(
-          this.state.countriesInfo.map((el) =>
-            el.country.country_eng.toLowerCase().split(" ").join("-")
-          )
-        )
-      );
+    new CountryService().getAllCountries().then((data) =>
+      this.setState({
+        countriesInfo: data,
+        countryName: data.map((el) =>
+          el.country.country_eng.toLowerCase().split(" ").join("-")
+        ),
+      })
+    );
   }
 
   onCountryChange = (country, iso) => {
@@ -59,6 +64,7 @@ export default class App extends Component {
                 onLanguageChange={this.onLanguageChange}
                 language={this.state.language}
                 countriesInfo={this.state.countriesInfo}
+                onCountryChange={this.onCountryChange}
               />
             </Route>
             <Route path="/:country">
@@ -66,6 +72,7 @@ export default class App extends Component {
                 page={"country"}
                 onLanguageChange={this.onLanguageChange}
                 language={this.state.language}
+                countriesInfo={this.state.countriesInfo}
               />
             </Route>
           </Switch>
@@ -106,11 +113,10 @@ export default class App extends Component {
                   );
                 }}
               />
-              {this.state.countriesInfo
-                .map((el) =>
-                  el.country.country_eng.toLowerCase().split(" ").join("-")
-                )
-                .indexOf(window.location.pathname.slice(1)) != -1 ? (
+              {this.props.history}
+              {this.state.countryName.indexOf(
+                window.location.pathname.slice(1)
+              ) != -1 ? (
                 <Route
                   path="/:country"
                   render={({ match }) => {
