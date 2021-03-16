@@ -27,6 +27,7 @@ export default class CountriesPage extends Component {
     currencyCode: null,
     sights: [],
     iso: null,
+    gettingData: true,
   };
 
   constructor() {
@@ -50,7 +51,8 @@ export default class CountriesPage extends Component {
         currencyCode: country[0].currency_code,
         sights: country[0].sights,
         iso: country[0].iso,
-      });
+        gettingData: this.props.gettingData,
+    });
     });
   }
 
@@ -77,6 +79,7 @@ export default class CountriesPage extends Component {
 
     return (
       <main className="main">
+        {console.log(this.state.gettingData)}
         <FirstScreenOfCountry
           countryEng={countryEng}
           country={country}
@@ -84,6 +87,7 @@ export default class CountriesPage extends Component {
           countryLang={countryLang}
           capitalLang={capitalLang}
           language={this.props.language}
+          gettingData={this.state.gettingData}
         />
         <MainCountryInfo
           iso={iso}
@@ -91,6 +95,7 @@ export default class CountriesPage extends Component {
           capital={capital}
           capitalLang={capitalLang}
           language={this.props.language}
+          gettingData={this.state.gettingData}
         />
         <SightsCarousel
             countryEng={countryEng}

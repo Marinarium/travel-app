@@ -21,12 +21,16 @@ export default class App extends Component {
     currentISO: "",
     language: localStorage.getItem("language") || "eng",
     countriesInfo: [],
+    gettingData: true,
   };
 
   componentDidMount() {
     new CountryService()
       .getAllCountries()
-      .then((data) => this.setState({ countriesInfo: data }))
+      .then((data) => this.setState({
+        countriesInfo: data,
+        gettingData: false,
+      }))
       .then((data) =>
         console.log(
           this.state.countriesInfo.map((el) =>
@@ -121,6 +125,7 @@ export default class App extends Component {
                         countriesInfo={this.state.countriesInfo}
                         country={country}
                         iso={this.state.currentISO}
+                        gettingData={this.state.gettingData}
                       />
                     );
                   }}

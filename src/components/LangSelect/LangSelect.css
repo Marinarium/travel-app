@@ -54,45 +54,35 @@ table {
 
 /*--- Colors ---*/
 /*--- Others ---*/
-.wg-time {
-  background: #fbfbfb;
-  border: 3px solid #E5E5E5;
-  box-sizing: border-box;
+.select {
+  height: 25px;
+  min-width: 100px;
   border-radius: 2px;
-  padding: 24px 25px 32px;
-  min-width: 290px;
-  margin-bottom: 30px;
+  cursor: pointer;
+  background-color: #5bbb76;
+  color: #fbfbfb;
+  border: 1px solid #21A683;
+  margin-right: 40px;
+  position: relative;
+  top: 5px;
 }
-
-.wg-time__title {
-  font-family: "Nunito", sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 125%;
-  line-height: 125%;
-  color: #5bbb76;
-  margin-bottom: 13px;
+.select:focus {
+  outline: none;
 }
-
-.wg-time__date {
+.select option {
   font-family: "Nunito", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 125%;
-  color: #262626;
-  margin-bottom: 15px;
-  text-transform: capitalize;
-}
-
-.wg-time__clock {
-  font-family: "Nunito", sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 24px;
   line-height: 125%;
-  color: #98AFBA;
+  color: #262626;
+}
+.select option:not(:checked) {
+  background-color: #fbfbfb;
+}
+.select option:checked {
+  background-color: #E5E5E5;
 }
 
-/*# sourceMappingURL=WidgetTime.css.map */
+/*# sourceMappingURL=LangSelect.css.map */
