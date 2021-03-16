@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 
 import "./WidgetTime.scss";
 
-import { langTextWidgetTime as langText } from "../../../services/langComponents";
+import {langTextWidgetTime as langText} from "../../../services/langComponents";
+import Loader from "../../Loader/Loader";
 
-export default function WidgetTime({ capital, time, language, capitalLang }) {
+export default function WidgetTime({capital, time, language, capitalLang}) {
   const [continent, setContinent] = useState();
   const nowTime = time.toLocaleString("en-us", {
     timeZone: continent,
@@ -30,24 +31,30 @@ export default function WidgetTime({ capital, time, language, capitalLang }) {
 
   return (
     <section className="wg-time">
-      <h3 className="wg-time__title">
-        {langText.timeH1[language]} {capitalLang}
-      </h3>
-      <div className="wg-time__date">
-        {langText.weekDay[nowTime.split(",")[0]][language]},
-        {time.toLocaleString("en-us", {
-          timeZone: continent,
-          day: "numeric",
-        })}
-        {langText.monthDay[nowTime.split(",")[1].split(" ")[1]][language]}
-      </div>
-      <div className="wg-time__clock">
-        {time.toLocaleString("en-us", {
-          timeZone: continent,
-          timeStyle: "medium",
-          hourCycle: "h24",
-        })}
-      </div>
+      {
+        !language || !capitalLang
+          ? <Loader/>
+          : <>
+            <h3 className="wg-time__title">
+              {langText.timeH1[language]} {capitalLang}
+            </h3>
+            <div className="wg-time__date">
+              {langText.weekDay[nowTime.split(",")[0]][language]},
+              {time.toLocaleString("en-us", {
+                timeZone: continent,
+                day: "numeric",
+              })}
+              {langText.monthDay[nowTime.split(",")[1].split(" ")[1]][language]}
+            </div>
+            <div className="wg-time__clock">
+              {time.toLocaleString("en-us", {
+                timeZone: continent,
+                timeStyle: "medium",
+                hourCycle: "h24",
+              })}
+            </div>
+          </>
+      }
     </section>
   );
 }

@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 
 import "./WidgetCurrency.scss";
-import { langTextWidgetCurrency as langText } from "../../../services/langComponents";
+import {langTextWidgetCurrency as langText} from "../../../services/langComponents";
+import Loader from "../../Loader/Loader";
 
-export default function WidgetCurrency({ currency, currencyCode, language }) {
+export default function WidgetCurrency({currency, currencyCode, language}) {
   const [usd, setUsd] = useState();
   const [eur, setEur] = useState();
   const [byn, setByn] = useState();
@@ -32,33 +33,39 @@ export default function WidgetCurrency({ currency, currencyCode, language }) {
 
   return (
     <section className="wg-currency">
-      <h3 className="wg-currency__title">{langText.localCurrency[language]}</h3>
-      <table className="wg-currency__table">
-        <thead>
-          <tr>
-            <th>{langText.currency[language]}</th>
-            <th>{langText.buying[language]}</th>
-            <th>{langText.selling[language]}</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>USD</td>
-            <td>{usd}</td>
-            <td>{sellingConvert(usd)}</td>
-          </tr>
-          <tr>
-            <td>EUR</td>
-            <td>{currencyCode === "EUR" ? "-" : eur}</td>
-            <td>{currencyCode === "EUR" ? "-" : sellingConvert(eur)}</td>
-          </tr>
-          <tr>
-            <td>BYN</td>
-            <td>{byn}</td>
-            <td>{sellingConvert(byn)}</td>
-          </tr>
-        </tbody>
-      </table>
+      {
+        !currency || !currencyCode || !language
+          ? <Loader/>
+          : <>
+            <h3 className="wg-currency__title">{langText.localCurrency[language]}</h3>
+            <table className="wg-currency__table">
+              <thead>
+              <tr>
+                <th>{langText.currency[language]}</th>
+                <th>{langText.buying[language]}</th>
+                <th>{langText.selling[language]}</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>USD</td>
+                <td>{usd}</td>
+                <td>{sellingConvert(usd)}</td>
+              </tr>
+              <tr>
+                <td>EUR</td>
+                <td>{currencyCode === "EUR" ? "-" : eur}</td>
+                <td>{currencyCode === "EUR" ? "-" : sellingConvert(eur)}</td>
+              </tr>
+              <tr>
+                <td>BYN</td>
+                <td>{byn}</td>
+                <td>{sellingConvert(byn)}</td>
+              </tr>
+              </tbody>
+            </table>
+          </>
+      }
     </section>
   );
 }
