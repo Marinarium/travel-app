@@ -103,7 +103,7 @@
   transition-duration: 1000ms;
 
   @media (max-width: 480px) {
-    width: auto;
+    width: 224px;
   }
 }
 
@@ -148,6 +148,10 @@
 
   .card__box:before {
     width: 321px;
+
+    @media (max-width: 480px) {
+      width: 240px;
+    }
   }
 
   .card__content:after {
