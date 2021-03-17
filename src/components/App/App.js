@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import CountryService from "../../services/country-service";
 
@@ -19,6 +15,7 @@ import SignIn from "../SignIn/SignIn";
 import SignUp from "../SignUp/SignUp";
 import "./App.scss";
 import Profile from "../Profile/Profile";
+import Loading from "../Loading/Loading";
 
 export default class App extends Component {
   state = {
@@ -116,10 +113,11 @@ export default class App extends Component {
                   );
                 }}
               />
-              {this.props.history}
-              {this.state.countryName.indexOf(
-                window.location.pathname.slice(1)
-              ) !== -1 ? (
+              {this.state.countryName.length === 0 ? (
+                <Loading />
+              ) : this.state.countryName.indexOf(
+                  window.location.pathname.slice(1)
+                ) !== -1 ? (
                 <Route
                   path="/:country"
                   render={({ match }) => {
