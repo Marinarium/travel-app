@@ -85,7 +85,6 @@ export default function SightsCarousel({
     return (
       <CarouselItem
         key={i}
-        /* img={`images/${UpdateStringForPath(countryEng)}/${item.img}`} */
         img={`images/${UpdateStringForPath(countryEng)}/${item.img}`}
         title={item.name_eng}
         country={countryEng}
@@ -105,6 +104,15 @@ export default function SightsCarousel({
     slidesToShow: 3,
     speed: 500,
     swipe: false,
+    responsive: [
+      {
+        breakpoint: 700,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      },
+    ],
     nextArrow: (
       <SampleNextArrow
         updateCarousel={updateCarousel}
@@ -126,7 +134,6 @@ export default function SightsCarousel({
   return (
     <section className="carousel">
       <Slider {...settings} ref={refSlider}>
-        {/* {console.log(refSlider.current.innerSlider.state.currentSlide)} */}
         {allSightsImages}
       </Slider>
     </section>
