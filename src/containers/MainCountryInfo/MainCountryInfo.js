@@ -7,12 +7,7 @@ import WidgetWeather from "../../components/Widgets/WidgetWeather/WidgetWeather"
 import "./MainCountryInfo.scss";
 import { API_Weather } from "../../services/apiKeys";
 
-export default function MainCountryInfo({
-  description,
-  capital,
-  language,
-  capitalLang,
-}) {
+export default function MainCountryInfo({description, capital, language, capitalLang}) {
   const [time, setTime] = useState(new Date());
   const [temperature, setTemperature] = useState();
   const [humidity, setHumidity] = useState();
@@ -46,7 +41,10 @@ export default function MainCountryInfo({
 
   return (
     <div className="main-info">
-      <AboutCountry description={description} language={language} />
+      <AboutCountry
+        description={description}
+        language={language}
+      />
       <aside className="widgets">
         <WidgetTime
           capital={capital}
