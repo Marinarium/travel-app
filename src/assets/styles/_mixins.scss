@@ -25,7 +25,11 @@
   box-sizing: border-box;
   border-radius: 2px;
   padding: 24px 25px 32px;
-  min-width: 280px;
+  min-width: 290px;
+
+  @media (max-width: 480px) {
+    min-width: 280px;
+  }
 }
 
 @mixin widget-title($color: $green) {

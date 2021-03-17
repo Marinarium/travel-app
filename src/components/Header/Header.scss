@@ -19,6 +19,10 @@
     flex-wrap: wrap;
     padding: 20px 5%;
   }
+
+  @media (max-width: 480px) {
+    padding: 20px 2%;
+  }
 }
 
 .header__logo {
