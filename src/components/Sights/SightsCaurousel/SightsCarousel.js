@@ -25,6 +25,8 @@ function SampleNextArrow(props) {
         borderRadius: "50%",
         padding: "5px 3.5px 2px 3.5px",
         zIndex: "10",
+        position: "absolute",
+        right: "10px",
       }}
       onClick={() => {
         setClick(true);
@@ -54,6 +56,8 @@ function SamplePrevArrow(props) {
         borderRadius: "50%",
         padding: "5px 3.5px 2px 3.5px",
         zIndex: "10",
+        position: "absolute",
+        left: "10px",
       }}
       onClick={() => {
         setClick(true);
@@ -91,7 +95,7 @@ export default function SightsCarousel({
   });
   useEffect(() => {
     updateCarousel(numberEl);
-  }, [numberEl]);
+  }, [numberEl, updateCarousel]);
 
   const settings = {
     className: "center",
@@ -100,6 +104,7 @@ export default function SightsCarousel({
     centerPadding: "60px",
     slidesToShow: 3,
     speed: 500,
+    swipe: false,
     nextArrow: (
       <SampleNextArrow
         updateCarousel={updateCarousel}

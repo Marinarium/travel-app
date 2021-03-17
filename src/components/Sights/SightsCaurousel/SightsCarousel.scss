@@ -9,54 +9,6 @@
   }
 }
 
-/*.arrows {
-  position: absolute;
-  top: 50%;
-  transform: translate(0, -50%);
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  &__btn {
-    background-color:  rgba(38, 38, 38, 0.8);
-    border: none;
-    outline: none;
-    box-sizing: border-box;
-    width: 45px;
-    height: 45px;
-    transition-duration: 300ms;
-    border-radius: 50%;
-    position: relative;
-    cursor: pointer;
-
-    &:hover {
-      background: rgba(91, 187, 118, 0.69);
-      box-shadow: $shadow;
-    }
-
-    &_left {
-      left: -17px;
-
-      .arrows__img {
-        position: relative;
-        left: -3px;
-        top: 1px;
-      }
-    }
-
-    &_right {
-      right: -17px;
-      .arrows__img {
-        position: relative;
-        right: -3px;
-        top: 1px;
-      }
-    }
-  }
-
-}*/
-
 .carousel__list {
   display: flex;
   justify-content: space-between;
