@@ -10,6 +10,7 @@ export default function SightsAndCurrency({
   currencyCode,
   language,
   sights,
+  carouselItem,
 }) {
   const [currency, setCurrency] = useState([]);
 
@@ -23,7 +24,11 @@ export default function SightsAndCurrency({
 
   return (
     <div className="sights-and-currency">
-      <AboutSights sights={sights} language={language} />
+      <AboutSights
+        sights={sights}
+        language={language}
+        carouselItem={carouselItem}
+      />
       <aside className="widgets">
         <WidgetCurrency
           iso={iso}

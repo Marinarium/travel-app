@@ -27,6 +27,7 @@ export default class CountriesPage extends Component {
     currencyCode: null,
     sights: [],
     iso: null,
+    carouselItem: 0,
   };
 
   constructor() {
@@ -58,6 +59,11 @@ export default class CountriesPage extends Component {
     this.updateCountry();
   }
 
+  updateCarousel = (num) => {
+    this.setState({
+      carouselItem: num,
+    });
+  };
   render() {
     const {
       countryEng,
@@ -73,7 +79,6 @@ export default class CountriesPage extends Component {
       sights,
       iso,
     } = this.state;
-
 
     return (
       <main className="main">
@@ -93,9 +98,10 @@ export default class CountriesPage extends Component {
           language={this.props.language}
         />
         <SightsCarousel
-            countryEng={countryEng}
-            sights={sights}
-            language={this.props.language}
+          countryEng={countryEng}
+          sights={sights}
+          language={this.props.language}
+          updateCarousel={this.updateCarousel}
         />
         <SightsAndCurrency
           iso={iso}
@@ -104,11 +110,9 @@ export default class CountriesPage extends Component {
           currencyCode={currencyCode}
           sights={sights}
           language={this.props.language}
+          carouselItem={this.state.carouselItem}
         />
-        <Video
-            language={this.props.language}
-            countryEng={countryEng}
-        />
+        <Video language={this.props.language} countryEng={countryEng} />
         <Map
           coordinates={coordinates}
           lat={lat}
