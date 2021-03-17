@@ -86,9 +86,8 @@ export default class Profile extends Component {
               placeholder="Change avatar"
             />
             <button
-              className="change-avatar"
+              className="change-avatar profile__change-btn"
               type="submit"
-              className="profile__change-btn"
             >
               {langText.changeAvatar[this.props.language]}
             </button>
