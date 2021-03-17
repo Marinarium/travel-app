@@ -1,10 +1,14 @@
+@import '../../assets/styles/main';
+
 .content {
   width: 100%;
-  height: 100vh;
-  background-color: #171f30;
+  height: 320px;
+  background-color: $light;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  right: 40px;
 }
 .content .loading {
   width: 80px;
@@ -15,10 +19,10 @@
   top: 0;
   padding: 0;
   margin: 0;
-  color: #5389a6;
+  color: $fourth-green;
   font-family: "Oxygen", sans-serif;
   animation: text 3.5s ease both infinite;
-  font-size: 12px;
+  font-size: 24px;
   letter-spacing: 1px;
 }
 @keyframes text {
@@ -44,13 +48,14 @@
   }
 }
 .content .loading span {
-  background-color: #5389a6;
+  background-color: $fourth-green;
   border-radius: 50px;
   display: block;
   height: 16px;
   width: 16px;
   bottom: 0;
   position: absolute;
+  left: 30px;
   transform: translateX(64px);
   animation: loading 3.5s ease both infinite;
 }
@@ -59,7 +64,7 @@
   content: "";
   width: 100%;
   height: 100%;
-  background-color: #a6dcee;
+  background-color: $second-green;
   border-radius: inherit;
   animation: loading2 3.5s ease both infinite;
 }
