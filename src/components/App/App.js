@@ -4,7 +4,6 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  useHistory,
 } from "react-router-dom";
 
 import CountryService from "../../services/country-service";
@@ -28,6 +27,7 @@ export default class App extends Component {
     language: localStorage.getItem("language") || "eng",
     countriesInfo: [],
     countryName: [],
+    countriesReceived: false,
   };
 
   componentDidMount() {
@@ -37,6 +37,7 @@ export default class App extends Component {
         countryName: data.map((el) =>
           el.country.country_eng.toLowerCase().split(" ").join("-")
         ),
+        countriesReceived: true,
       })
     );
   }
@@ -85,6 +86,7 @@ export default class App extends Component {
                   onCountryChange={this.onCountryChange}
                   language={this.state.language}
                   countriesInfo={this.state.countriesInfo}
+                  countriesReceived={this.state.countriesReceived}
                 />
               </Route>
               <Route
@@ -117,7 +119,7 @@ export default class App extends Component {
               {this.props.history}
               {this.state.countryName.indexOf(
                 window.location.pathname.slice(1)
-              ) != -1 ? (
+              ) !== -1 ? (
                 <Route
                   path="/:country"
                   render={({ match }) => {

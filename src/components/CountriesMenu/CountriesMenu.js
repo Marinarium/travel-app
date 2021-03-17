@@ -1,7 +1,8 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 
 import CountryCard from "../CountryCard/CountryCard";
-import { UpdateStringForPath } from "../../helpers";
+import {UpdateStringForPath} from "../../helpers";
+import Loader from "../../components/Loader/Loader";
 
 import "./CountriesMenu.scss";
 
@@ -13,24 +14,28 @@ export default class CountriesMenu extends Component {
   };
 
   render() {
-    const { onCountryChange, countriesInfo, language } = this.props;
+    const {onCountryChange, countriesInfo, language, countriesReceived} = this.props;
 
-    const allCards = countriesInfo.map(
-      ({ country, capital, cover, iso }) => {
-        return (
-          <CountryCard
-            key={iso}
-            country={country[`country_eng`]}
-            countryName={country[`country_${language}`]}
-            capital={capital[`capital_${language}`]}
-            cover={`images/${UpdateStringForPath(country.country_eng)}/${cover}`}
-            iso={iso}
-            onCountryChange={() => onCountryChange(country["country_eng"], iso)}
-          />
-        );
-      }
-    );
-
-    return <section className="countries-menu">{allCards}</section>;
+    if (!countriesReceived) {
+      return <Loader/>
+    } else {
+      return <section className="countries-menu">{
+        countriesInfo.map(
+          ({country, capital, cover, iso}) => {
+            return (
+              <CountryCard
+                key={iso}
+                country={country[`country_eng`]}
+                countryName={country[`country_${language}`]}
+                capital={capital[`capital_${language}`]}
+                cover={`images/${UpdateStringForPath(country.country_eng)}/${cover}`}
+                iso={iso}
+                onCountryChange={() => onCountryChange(country["country_eng"], iso)}
+              />
+            );
+          }
+        )}
+      </section>
+    }
   }
 }
