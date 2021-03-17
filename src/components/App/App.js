@@ -24,6 +24,7 @@ export default class App extends Component {
     language: localStorage.getItem("language") || "eng",
     countriesInfo: [],
     countryName: [],
+    countriesReceived: false,
   };
 
   componentDidMount() {
@@ -33,6 +34,7 @@ export default class App extends Component {
         countryName: data.map((el) =>
           el.country.country_eng.toLowerCase().split(" ").join("-")
         ),
+        countriesReceived: true,
       })
     );
   }
@@ -81,6 +83,7 @@ export default class App extends Component {
                   onCountryChange={this.onCountryChange}
                   language={this.state.language}
                   countriesInfo={this.state.countriesInfo}
+                  countriesReceived={this.state.countriesReceived}
                 />
               </Route>
               <Route

@@ -5,7 +5,7 @@ import "./WidgetWeather.scss";
 import {langTextWidgetWeather as langText} from "../../../services/langComponents";
 import Loader from "../../Loader/Loader";
 
-export default function WidgetWeather({temperature, humidity, wind, icon, capitalLang, language}) {
+export default function WidgetWeather({temperature, humidity, wind, icon, capitalLang, language, isFetching}) {
 
   let img = "";
   if (icon) {
@@ -15,7 +15,7 @@ export default function WidgetWeather({temperature, humidity, wind, icon, capita
   return (
     <section className="wg-weather">
       {
-        !icon
+        isFetching || !icon
           ? <Loader/>
           : <>
             <h3 className="wg-weather__title">

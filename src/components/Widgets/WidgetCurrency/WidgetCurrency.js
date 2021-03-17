@@ -4,7 +4,7 @@ import "./WidgetCurrency.scss";
 import {langTextWidgetCurrency as langText} from "../../../services/langComponents";
 import Loader from "../../Loader/Loader";
 
-export default function WidgetCurrency({currency, currencyCode, language}) {
+export default function WidgetCurrency({currency, currencyCode, language, isFetching}) {
   const [usd, setUsd] = useState();
   const [eur, setEur] = useState();
   const [byn, setByn] = useState();
@@ -34,7 +34,7 @@ export default function WidgetCurrency({currency, currencyCode, language}) {
   return (
     <section className="wg-currency">
       {
-        !currency || !currencyCode || !language
+        isFetching
           ? <Loader/>
           : <>
             <h3 className="wg-currency__title">{langText.localCurrency[language]}</h3>

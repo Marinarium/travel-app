@@ -5,7 +5,6 @@ import "./Video.scss";
 import video from "./video/the-netherlands.mp4";
 
 import { langTextVideo as langText } from "../../services/langComponents";
-import {UpdateStringForPath} from "../../helpers";
 
 export default function Video({ language, countryEng }) {
   return (

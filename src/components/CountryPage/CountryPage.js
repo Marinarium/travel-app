@@ -11,6 +11,7 @@ import { getISObyPath } from "../../helpers";
 import "./CountryPage.scss";
 
 export default class CountriesPage extends Component {
+
   countryService = new CountryService();
   currentISOfromPath = getISObyPath();
 
@@ -32,6 +33,22 @@ export default class CountriesPage extends Component {
 
   constructor() {
     super();
+    this.countryService = new CountryService();
+    this.currentISOfromPath = getISObyPath();
+    this.state = {
+      countryEng: null,
+      country: null,
+      countryLang: null,
+      capital: null,
+      capitalLang: null,
+      description: null,
+      coordinates: null,
+      lat: null,
+      long: null,
+      currencyCode: null,
+      sights: [],
+      iso: null,
+    };
     this.updateCountry();
   }
 

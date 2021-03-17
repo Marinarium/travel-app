@@ -91,7 +91,7 @@ export default function Search(props) {
       setFindElements(find);
     }
     setActiveElements(0);
-  }, [textInput]);
+  }, [textInput, props.countriesInfo, props.language]);
 
   return (
     <div
