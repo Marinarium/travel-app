@@ -12,12 +12,14 @@ export default function SightsAndCurrency({
   sights,
 }) {
   const [currency, setCurrency] = useState([]);
+  const [isFetching, setFetching] = useState(true);
 
   useEffect(() => {
     fetch(`https://v6.exchangerate-api.com/v6/${API_Currency}/latest/BYN`)
       .then((res) => res.json())
       .then((data) => {
-        setCurrency(data.conversion_rates);
+        setCurrency(() => data.conversion_rates);
+        setFetching(() => false);
       });
   }, []);
 
@@ -30,6 +32,7 @@ export default function SightsAndCurrency({
           currency={currency}
           currencyCode={currencyCode}
           language={language}
+          isFetching={isFetching}
         />
       </aside>
     </div>
