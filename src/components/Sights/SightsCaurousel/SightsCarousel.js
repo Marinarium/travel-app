@@ -105,6 +105,15 @@ export default function SightsCarousel({
     slidesToShow: 3,
     speed: 500,
     swipe: false,
+    responsive: [
+      {
+        breakpoint: 700,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      },
+    ],
     nextArrow: (
       <SampleNextArrow
         updateCarousel={updateCarousel}

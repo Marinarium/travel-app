@@ -1,0 +1,212 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*--- Colors ---*/
+/*--- Others ---*/
+.card {
+  width: 100%;
+  height: 290px;
+  border-radius: 2px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #E5E5E5;
+  transition-duration: 500ms;
+}
+
+.card__link {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+}
+
+.card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition-duration: 500ms;
+  transition-timing-function: ease-out;
+}
+
+.card__box {
+  position: absolute;
+  z-index: 1;
+  margin-left: 28px;
+  margin-bottom: 30px;
+}
+@media (max-width: 480px) {
+  .card__box {
+    width: 70%;
+  }
+}
+.card__box:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -7px;
+  top: -8px;
+  width: 110px;
+  height: 171px;
+  background: #5bbb76;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+  z-index: -1;
+  transition-duration: 700ms;
+  transition-timing-function: ease-out;
+}
+
+.card:nth-child(4n+2) .card__box:before {
+  background: #21A683;
+}
+.card:nth-child(4n+2) .card__content:after {
+  border-left: 2px solid #21A683;
+  border-bottom: 2px solid #21A683;
+}
+
+.card:nth-child(4n+3) .card__box:before {
+  background: #008F87;
+}
+.card:nth-child(4n+3) .card__content:after {
+  border-left: 2px solid #008F87;
+  border-bottom: 2px solid #008F87;
+}
+
+.card:nth-child(4n+4) .card__box:before {
+  background: #007781;
+}
+.card:nth-child(4n+4) .card__content:after {
+  border-left: 2px solid #007781;
+  border-bottom: 2px solid #007781;
+}
+
+.card__content {
+  height: 156px;
+  width: 305px;
+  box-sizing: border-box;
+  padding-left: 30px;
+  padding-bottom: 32px;
+  background: rgba(38, 38, 38, 0.9);
+  border-radius: 2px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  transition-duration: 1000ms;
+}
+@media (max-width: 480px) {
+  .card__content {
+    width: auto;
+  }
+}
+
+.card__content:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 16px;
+  left: 13px;
+  height: 76px;
+  width: 155px;
+  box-sizing: border-box;
+  border-left: 2px solid #5bbb76;
+  border-bottom: 2px solid #5bbb76;
+  z-index: -1;
+  transition-duration: 750ms;
+}
+
+.card__title {
+  font-family: "Nunito", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 125%;
+  line-height: 125%;
+  letter-spacing: 0.065em;
+  text-transform: uppercase;
+  color: #fbfbfb;
+  margin-bottom: 4px;
+}
+
+.card__subtitle {
+  font-family: "Nunito", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 125%;
+  line-height: 125%;
+  letter-spacing: 0.065em;
+  text-transform: capitalize;
+  color: #fbfbfb;
+}
+
+/*--- Animation ---*/
+.card:hover .card__img {
+  transform: scale(1.03);
+  box-shadow: 0 5px 6px rgba(0, 0, 0, 0.25);
+}
+.card:hover .card__box:before {
+  width: 321px;
+}
+.card:hover .card__content:after {
+  height: 120px;
+  width: 190px;
+}
+.card:hover .card__content {
+  background: #262626;
+}
+
+/*# sourceMappingURL=CountryCard.css.map */
