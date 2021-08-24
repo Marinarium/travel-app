@@ -1,0 +1,41 @@
+@mixin main-font(
+  $font-weight: normal,
+  $font-size: 16px,
+  $line-height: 125%) {
+  font-family: 'Nunito', sans-serif;
+  font-style: normal;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+@mixin text-font() {
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 177%;
+  letter-spacing: 0.065em;
+  color: $dark;
+}
+
+@mixin widget() {
+  background: $light;
+  border: 3px solid $grey;
+  box-sizing: border-box;
+  border-radius: 2px;
+  padding: 24px 25px 32px;
+  min-width: 290px;
+
+  @media (max-width: 480px) {
+    min-width: 280px;
+  }
+}
+
+@mixin widget-title($color: $green) {
+  @include main-font(bold, 18px);
+  line-height: 125%;
+  color: $color;
+  margin-bottom: 13px;
+}
+

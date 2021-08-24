@@ -1,0 +1,103 @@
+@import '../../assets/styles/main';
+
+.profile {
+  margin-top: 50px;
+  margin-bottom: 90px;
+  padding: 0 5%;
+
+  @media (min-width: 1600px) {
+    padding-left: 12%;
+    padding-right: 12%;
+  }
+}
+
+.profile__title {
+  @include main-font(bold, 36px);
+  letter-spacing: 0.065em;
+  color: $dark;
+  margin-bottom: 40px;
+
+  .accent {
+    color: $green;
+  }
+}
+
+.profile__subtitle {
+  @include main-font(bold, 24px);
+  letter-spacing: 0.065em;
+  text-transform: capitalize;
+  color: $dark;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.profile__avatar {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.profile__avatar-input {
+  margin-bottom: 20px;
+}
+
+.profile__change-avatar {
+  @include main-font(bold, 16px);
+  letter-spacing: 0.065em;
+  text-transform: capitalize;
+  color: $dark;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.profile__change-btn {
+  @include main-font(bold, 14px);
+  letter-spacing: 0.035em;
+  color: grey;
+  padding: 4px 6px;
+  background-color: transparent;
+  box-shadow: $light-shadow;
+  border-radius: 5px;
+  border: 2px solid grey;
+  cursor: pointer;
+  transition-duration: 350ms;
+  margin-bottom: 5px;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    box-shadow: $light-big-shadow;
+  }
+}
+
+.profile__advice {
+  @include text-font();
+  font-size: 12px;
+  color: grey;
+  margin-bottom: 20px;
+}
+
+.profile__logout-btn {
+  @include main-font(bold, 16px);
+  letter-spacing: 0.065em;
+  color: $green;
+  padding: 5px 8px;
+  background-color: transparent;
+  box-shadow: $light-shadow;
+  border-radius: 5px;
+  border: 2px solid $green;
+  cursor: pointer;
+  transition-duration: 350ms;
+  min-width: 150px;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    color: $light;
+    background-color: $green;
+    box-shadow: $light-big-shadow;
+  }
+}

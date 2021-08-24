@@ -1,0 +1,42 @@
+@import '../../assets/styles/main';
+
+.select {
+  height: 25px;
+  min-width: 100px;
+  border-radius: 2px;
+  cursor: pointer;
+  background-color: $green;
+  color: $light;
+  border: 1px solid $second-green;
+  margin-right: 40px;
+  margin-left: 5px;
+  position: relative;
+  top: 5px;
+
+  @media (max-width: 900px) {
+    order: 4;
+    margin-right: 0;
+  }
+
+  @media (max-width: 480px) {
+    flex-basis: 40%;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  option {
+    @include main-font(normal, 14px);
+    line-height: 125%;
+    color: $dark;
+
+    &:not(:checked) {
+      background-color: $light;
+    }
+
+    &:checked {
+      background-color: $grey;
+    }
+  }
+}

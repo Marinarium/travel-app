@@ -1,0 +1,120 @@
+@import '../../assets/styles/main';
+
+.form {
+  margin-top: 50px;
+  margin-bottom: 90px;
+  padding: 0 5%;
+
+  @media (min-width: 1600px) {
+    padding-left: 12%;
+    padding-right: 12%;
+  }
+}
+
+.form__title {
+  @include main-font(bold, 36px);
+  letter-spacing: 0.065em;
+  color: $dark;
+  margin-bottom: 40px;
+
+  .accent {
+    color: $green;
+  }
+}
+
+.form__field {
+  position: relative;
+  width: 350px;
+  border-bottom: 1px solid $dark;
+  margin-bottom: 40px;
+
+  @media (max-width: 480px) {
+    width: auto;
+  }
+
+  &_without-line {
+    border: none;
+  }
+}
+
+.form__label {
+  @include main-font(bold, 24px);
+  letter-spacing: 0.065em;
+  text-transform: capitalize;
+  color: $dark;
+  margin-bottom: 10px;
+  display: block;
+
+  .accent {
+    color: $green;
+  }
+}
+
+.form__input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  height: 30px;
+  @include main-font(normal, 20px);
+  color: $dark;
+  line-height: 125%;
+}
+
+/*--- Animation ---*/
+.form__line {
+  &::before,
+  &::after {
+    position: absolute;
+    bottom: -1px;
+    width: 0;
+    height: 2px;
+    content: "";
+    transition-duration: 350ms;
+    transition-property: width;
+  }
+
+  &::before {
+    left: 50%;
+  }
+
+  &::after {
+    right: 50%;
+  }
+}
+
+.form__input:hover ~ .form__line::before,
+.form__input:hover ~ .form__line::after {
+  background-color: $green;
+  width: 50%;
+  transition-duration: 350ms;
+}
+
+.form__input:focus ~ .form__line::before,
+.form__input:focus ~ .form__line::after {
+  background-color: #21A683;
+  width: 50%;
+  transition-duration: 350ms;
+}
+
+.form__btn {
+  @include main-font(bold, 16px);
+  letter-spacing: 0.065em;
+  color: $green;
+  padding: 5px 8px;
+  background-color: transparent;
+  box-shadow: $light-shadow;
+  border-radius: 5px;
+  border: 2px solid $green;
+  cursor: pointer;
+  transition-duration: 350ms;
+  min-width: 150px;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    color: $light;
+    background-color: $green;
+    box-shadow: $light-big-shadow;
+  }
+}

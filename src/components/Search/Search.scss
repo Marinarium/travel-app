@@ -1,0 +1,166 @@
+@import "../../assets/styles/main";
+
+.search {
+  float: right;
+  display: inline-block;
+  position: relative;
+  width: 235px;
+  border-bottom: 1px solid $light;
+  align-self: flex-start;
+  bottom: -2px;
+
+  @media (max-width: 480px) {
+    width: auto;
+  }
+}
+
+.header__search {
+  margin-right: 40px;
+
+  @media (max-width: 900px) {
+    margin-right: 0;
+  }
+}
+
+.search__input,
+.search__button,
+.clear__button {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.search__input {
+  width: 100%;
+  height: 30px;
+
+  @include main-font(normal, 14px);
+  color: $light;
+  line-height: 125%;
+}
+
+.search__input::placeholder {
+  @include main-font(normal, 14px);
+  color: $light;
+  line-height: 125%;
+}
+
+/*--- Animation ---*/
+.search__line {
+  &::before,
+  &::after {
+    position: absolute;
+    bottom: -1px;
+    width: 0;
+    height: 2px;
+    content: "";
+    transition-duration: 350ms;
+    transition-property: width;
+  }
+
+  &::before {
+    left: 50%;
+  }
+
+  &::after {
+    right: 50%;
+  }
+}
+
+.search__input:hover ~ .search__line::before,
+.search__input:hover ~ .search__line::after {
+  background-color: $green;
+  width: 50%;
+  transition-duration: 350ms;
+}
+
+.search__input:focus ~ .search__line::before,
+.search__input:focus ~ .search__line::after {
+  background-color: $green;
+  width: 50%;
+  transition-duration: 350ms;
+}
+
+.search__button,
+.clear__button {
+  height: 30px;
+  width: 42px;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  cursor: pointer;
+  padding: 0;
+  transition-duration: 350ms;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.2);
+  }
+}
+
+.clear__button {
+  right: -15px;
+}
+
+.search_noVisibility {
+  visibility: hidden;
+  display: none;
+}
+
+
+/*----- Styles for Results ---*/
+.search_visible {
+  position: relative;
+
+  @media (max-width: 900px) {
+    order: 3;
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+
+.search__result {
+  position: absolute;
+  background-color: $dark;
+  color: $light;
+  top: 37px;
+  left: -15px;
+  border-radius: 5px;
+  box-shadow: $shadow;
+  min-width: 260px;
+  box-sizing: border-box;
+
+  li {
+    margin-bottom: 10px;
+    padding: 0 15px;
+
+    &:first-child {
+      padding-top: 20px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 30px;
+    }
+
+    &.activeCoutrySearch {
+      color: $green;
+    }
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    @include main-font(normal, 16px);
+    letter-spacing: 0.025em;
+    text-transform: capitalize;
+    transition-duration: 350ms;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      color: $green;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@import '../../assets/styles/main';
+
+.about-country {
+  margin-right: 80px;
+  padding-left: 50px;
+
+  @media (max-width: 900px) {
+    margin-right: 0;
+    padding-left: 0;
+    margin-bottom: 40px;
+  }
+}
+
+.about-country__title {
+  @include main-font(bold, 36px);
+  letter-spacing: 0.065em;
+  color: $dark;
+  margin-bottom: 25px;
+
+  .accent {
+    color: $green;
+  }
+}
+
+.about-country__p {
+  @include text-font();
+  margin-bottom: 25px;
+}

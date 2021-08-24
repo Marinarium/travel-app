@@ -1,0 +1,34 @@
+@import '../../../assets/styles/main';
+
+.about-sights {
+  margin-right: 80px;
+  padding-left: 50px;
+
+  @media (max-width: 900px) {
+    margin-right: 0;
+    padding-left: 0;
+    margin-bottom: 40px;
+  }
+}
+
+.about-sights__item {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+.about-sights__title {
+  @include main-font(bold, 24px);
+  letter-spacing: 0.065em;
+  text-transform: capitalize;
+  color: $green;
+  margin-bottom: 20px;
+}
+
+.about-sights__p {
+  @include text-font();
+  line-height: 170%;
+  margin-bottom: 25px;
+}
